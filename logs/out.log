@@ -1,0 +1,882 @@
+2025-12-19 14:22:55 +05:30: [MULTER] Using upload directory: /var/www/uploads/blog_photos
+2025-12-19 14:22:55 +05:30: [MULTER] Using upload directory: /var/www/uploads/blog_photos
+2025-12-19 14:22:56 +05:30: [MULTER] Using upload directory: /var/www/uploads/blog_photos
+2025-12-19 14:22:56 +05:30: [MULTER] Using upload directory: /var/www/uploads/blog_photos
+2025-12-19 14:22:56 +05:30: [MULTER] Using upload directory: /var/www/uploads/blog_photos
+2025-12-19 14:22:56 +05:30: [MULTER] Using upload directory: /var/www/uploads/blog_photos
+2025-12-19 14:22:56 +05:30: [MULTER] Using upload directory: /var/www/uploads/blog_photos
+2025-12-19 14:22:56 +05:30: [MULTER] Using upload directory: /var/www/uploads/blog_photos
+2025-12-19 14:22:55 +05:30: [MULTER] Directory does not exist. Creating...
+2025-12-19 14:22:56 +05:30: ⚠️  No Redis configuration found. Running without cache.
+2025-12-19 14:22:56 +05:30: [MULTER] Directory does not exist. Creating...
+2025-12-19 14:22:56 +05:30: ⚠️  No Redis configuration found. Running without cache.
+2025-12-19 14:22:56 +05:30: ✅ Worker 8737 running on port 5000
+2025-12-19 14:22:56 +05:30: 🌍 Environment: production
+2025-12-19 14:22:56 +05:30: 🕰 Started at: 2025-12-19T08:52:56.330Z
+2025-12-19 14:22:56 +05:30: 📊 Process ID: 8737
+2025-12-19 14:22:56 +05:30: 📋 Memory: 70MB
+2025-12-19 14:22:56 +05:30: ✅ Worker 8736 running on port 5000
+2025-12-19 14:22:56 +05:30: 🌍 Environment: production
+2025-12-19 14:22:56 +05:30: 🕰 Started at: 2025-12-19T08:52:56.335Z
+2025-12-19 14:22:56 +05:30: 📊 Process ID: 8736
+2025-12-19 14:22:56 +05:30: 📋 Memory: 66MB
+2025-12-19 14:22:56 +05:30: [MULTER] Directory does not exist. Creating...
+2025-12-19 14:22:56 +05:30: ⚠️  No Redis configuration found. Running without cache.
+2025-12-19 14:22:56 +05:30: ✅ Worker 8733 running on port 5000
+2025-12-19 14:22:56 +05:30: 🌍 Environment: production
+2025-12-19 14:22:56 +05:30: 🕰 Started at: 2025-12-19T08:52:56.336Z
+2025-12-19 14:22:56 +05:30: 📊 Process ID: 8733
+2025-12-19 14:22:56 +05:30: 📋 Memory: 65MB
+2025-12-19 14:22:56 +05:30: [MULTER] Directory does not exist. Creating...
+2025-12-19 14:22:56 +05:30: ⚠️  No Redis configuration found. Running without cache.
+2025-12-19 14:22:56 +05:30: ✅ Worker 8738 running on port 5000
+2025-12-19 14:22:56 +05:30: 🌍 Environment: production
+2025-12-19 14:22:56 +05:30: 🕰 Started at: 2025-12-19T08:52:56.352Z
+2025-12-19 14:22:56 +05:30: 📊 Process ID: 8738
+2025-12-19 14:22:56 +05:30: 📋 Memory: 66MB
+2025-12-19 14:22:56 +05:30: [MULTER] Directory does not exist. Creating...
+2025-12-19 14:22:56 +05:30: ⚠️  No Redis configuration found. Running without cache.
+2025-12-19 14:22:55 +05:30: [MULTER] Directory does not exist. Creating...
+2025-12-19 14:22:56 +05:30: ⚠️  No Redis configuration found. Running without cache.
+2025-12-19 14:22:56 +05:30: ✅ Worker 8735 running on port 5000
+2025-12-19 14:22:56 +05:30: 🌍 Environment: production
+2025-12-19 14:22:56 +05:30: 🕰 Started at: 2025-12-19T08:52:56.359Z
+2025-12-19 14:22:56 +05:30: 📊 Process ID: 8735
+2025-12-19 14:22:56 +05:30: 📋 Memory: 66MB
+2025-12-19 14:22:56 +05:30: ✅ Worker 8739 running on port 5000
+2025-12-19 14:22:56 +05:30: 🌍 Environment: production
+2025-12-19 14:22:56 +05:30: 🕰 Started at: 2025-12-19T08:52:56.359Z
+2025-12-19 14:22:56 +05:30: 📊 Process ID: 8739
+2025-12-19 14:22:56 +05:30: 📋 Memory: 70MB
+2025-12-19 14:22:56 +05:30: [MULTER] Directory does not exist. Creating...
+2025-12-19 14:22:56 +05:30: ⚠️  No Redis configuration found. Running without cache.
+2025-12-19 14:22:56 +05:30: ✅ Worker 8734 running on port 5000
+2025-12-19 14:22:56 +05:30: 🌍 Environment: production
+2025-12-19 14:22:56 +05:30: 🕰 Started at: 2025-12-19T08:52:56.363Z
+2025-12-19 14:22:56 +05:30: 📊 Process ID: 8734
+2025-12-19 14:22:56 +05:30: 📋 Memory: 65MB
+2025-12-19 14:22:56 +05:30: [MULTER] Directory does not exist. Creating...
+2025-12-19 14:22:56 +05:30: ⚠️  No Redis configuration found. Running without cache.
+2025-12-19 14:22:56 +05:30: ✅ Worker 8740 running on port 5000
+2025-12-19 14:22:56 +05:30: 🌍 Environment: production
+2025-12-19 14:22:56 +05:30: 🕰 Started at: 2025-12-19T08:52:56.373Z
+2025-12-19 14:22:56 +05:30: 📊 Process ID: 8740
+2025-12-19 14:22:56 +05:30: 📋 Memory: 66MB
+2025-12-19 14:22:57 +05:30: ✅ MongoDB Connected Successfully!
+2025-12-19 14:22:57 +05:30: 📊 Database: BookMyWorker
+2025-12-19 14:22:57 +05:30: 🔗 Connection Pool: Min 5, Max 50
+2025-12-19 14:22:57 +05:30: ✅ MongoDB Connected Successfully!
+2025-12-19 14:22:57 +05:30: 📊 Database: BookMyWorker
+2025-12-19 14:22:57 +05:30: 🔗 Connection Pool: Min 5, Max 50
+2025-12-19 14:22:57 +05:30: ✅ MongoDB Connected Successfully!
+2025-12-19 14:22:57 +05:30: ✅ MongoDB Connected Successfully!
+2025-12-19 14:22:57 +05:30: 📊 Database: BookMyWorker
+2025-12-19 14:22:57 +05:30: 🔗 Connection Pool: Min 5, Max 50
+2025-12-19 14:22:57 +05:30: 📊 Database: BookMyWorker
+2025-12-19 14:22:57 +05:30: 🔗 Connection Pool: Min 5, Max 50
+2025-12-19 14:22:57 +05:30: ✅ MongoDB Connected Successfully!
+2025-12-19 14:22:57 +05:30: ✅ MongoDB Connected Successfully!
+2025-12-19 14:22:57 +05:30: ✅ MongoDB Connected Successfully!
+2025-12-19 14:22:57 +05:30: 📊 Database: BookMyWorker
+2025-12-19 14:22:57 +05:30: 🔗 Connection Pool: Min 5, Max 50
+2025-12-19 14:22:57 +05:30: 📊 Database: BookMyWorker
+2025-12-19 14:22:57 +05:30: 🔗 Connection Pool: Min 5, Max 50
+2025-12-19 14:22:57 +05:30: 📊 Database: BookMyWorker
+2025-12-19 14:22:57 +05:30: 🔗 Connection Pool: Min 5, Max 50
+2025-12-19 14:22:57 +05:30: ✅ MongoDB Connected Successfully!
+2025-12-19 14:22:57 +05:30: 📊 Database: BookMyWorker
+2025-12-19 14:22:57 +05:30: 🔗 Connection Pool: Min 5, Max 50
+2025-12-19 14:52:56 +05:30: 📋 Memory Usage: 47MB (Heap: 52MB)
+2025-12-19 14:52:56 +05:30: 📋 Memory Usage: 47MB (Heap: 53MB)
+2025-12-19 14:52:56 +05:30: 📋 Memory Usage: 47MB (Heap: 53MB)
+2025-12-19 14:52:56 +05:30: 📋 Memory Usage: 47MB (Heap: 53MB)
+2025-12-19 14:52:56 +05:30: 📋 Memory Usage: 41MB (Heap: 53MB)
+2025-12-19 14:52:56 +05:30: 📋 Memory Usage: 41MB (Heap: 52MB)
+2025-12-19 14:52:56 +05:30: 📋 Memory Usage: 47MB (Heap: 54MB)
+2025-12-19 14:52:56 +05:30: 📋 Memory Usage: 46MB (Heap: 53MB)
+2025-12-19 15:22:54 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 3:22:54 PM
+2025-12-19 15:22:54 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 3:22:54 PM
+2025-12-19 15:22:55 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 3:22:55 PM
+2025-12-19 15:22:55 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 3:22:55 PM
+2025-12-19 15:22:55 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 3:22:55 PM
+2025-12-19 15:22:55 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 3:22:55 PM
+2025-12-19 15:22:55 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 3:22:55 PM
+2025-12-19 15:22:55 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 3:22:55 PM
+2025-12-19 15:22:56 +05:30: 📋 Memory Usage: 45MB (Heap: 52MB)
+2025-12-19 15:22:56 +05:30: 📋 Memory Usage: 45MB (Heap: 53MB)
+2025-12-19 15:22:56 +05:30: 📋 Memory Usage: 45MB (Heap: 52MB)
+2025-12-19 15:22:56 +05:30: 📋 Memory Usage: 46MB (Heap: 53MB)
+2025-12-19 15:22:56 +05:30: 📋 Memory Usage: 45MB (Heap: 52MB)
+2025-12-19 15:22:56 +05:30: 📋 Memory Usage: 45MB (Heap: 52MB)
+2025-12-19 15:22:56 +05:30: 📋 Memory Usage: 45MB (Heap: 52MB)
+2025-12-19 15:22:56 +05:30: 📋 Memory Usage: 45MB (Heap: 52MB)
+2025-12-19 15:52:56 +05:30: 📋 Memory Usage: 44MB (Heap: 51MB)
+2025-12-19 15:52:56 +05:30: 📋 Memory Usage: 44MB (Heap: 52MB)
+2025-12-19 15:52:56 +05:30: 📋 Memory Usage: 44MB (Heap: 51MB)
+2025-12-19 15:52:56 +05:30: 📋 Memory Usage: 43MB (Heap: 52MB)
+2025-12-19 15:52:56 +05:30: 📋 Memory Usage: 43MB (Heap: 51MB)
+2025-12-19 15:52:56 +05:30: 📋 Memory Usage: 44MB (Heap: 51MB)
+2025-12-19 15:52:56 +05:30: 📋 Memory Usage: 44MB (Heap: 52MB)
+2025-12-19 15:52:56 +05:30: 📋 Memory Usage: 43MB (Heap: 52MB)
+2025-12-19 16:22:54 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 4:22:54 PM
+2025-12-19 16:22:54 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 4:22:54 PM
+2025-12-19 16:22:54 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 4:22:54 PM
+2025-12-19 16:22:55 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 4:22:55 PM
+2025-12-19 16:22:55 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 4:22:55 PM
+2025-12-19 16:22:55 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 4:22:55 PM
+2025-12-19 16:22:55 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 4:22:55 PM
+2025-12-19 16:22:55 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 4:22:55 PM
+2025-12-19 16:22:56 +05:30: 📋 Memory Usage: 43MB (Heap: 52MB)
+2025-12-19 16:22:56 +05:30: 📋 Memory Usage: 41MB (Heap: 52MB)
+2025-12-19 16:22:56 +05:30: 📋 Memory Usage: 42MB (Heap: 52MB)
+2025-12-19 16:22:56 +05:30: 📋 Memory Usage: 42MB (Heap: 53MB)
+2025-12-19 16:22:56 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-19 16:22:56 +05:30: 📋 Memory Usage: 42MB (Heap: 52MB)
+2025-12-19 16:22:56 +05:30: 📋 Memory Usage: 43MB (Heap: 51MB)
+2025-12-19 16:22:56 +05:30: 📋 Memory Usage: 41MB (Heap: 52MB)
+2025-12-19 16:52:55 +05:30: 📋 Memory Usage: 47MB (Heap: 52MB)
+2025-12-19 16:52:55 +05:30: 📋 Memory Usage: 45MB (Heap: 51MB)
+2025-12-19 16:52:56 +05:30: 📋 Memory Usage: 46MB (Heap: 52MB)
+2025-12-19 16:52:56 +05:30: 📋 Memory Usage: 46MB (Heap: 52MB)
+2025-12-19 16:52:56 +05:30: 📋 Memory Usage: 46MB (Heap: 51MB)
+2025-12-19 16:52:56 +05:30: 📋 Memory Usage: 46MB (Heap: 51MB)
+2025-12-19 16:52:56 +05:30: 📋 Memory Usage: 46MB (Heap: 52MB)
+2025-12-19 16:52:56 +05:30: 📋 Memory Usage: 46MB (Heap: 52MB)
+2025-12-19 17:22:54 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 5:22:54 PM
+2025-12-19 17:22:54 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 5:22:54 PM
+2025-12-19 17:22:54 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 5:22:54 PM
+2025-12-19 17:22:54 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 5:22:54 PM
+2025-12-19 17:22:54 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 5:22:54 PM
+2025-12-19 17:22:55 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 5:22:55 PM
+2025-12-19 17:22:55 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 5:22:55 PM
+2025-12-19 17:22:55 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 5:22:55 PM
+2025-12-19 17:22:55 +05:30: 📋 Memory Usage: 45MB (Heap: 53MB)
+2025-12-19 17:22:55 +05:30: 📋 Memory Usage: 44MB (Heap: 51MB)
+2025-12-19 17:22:55 +05:30: 📋 Memory Usage: 44MB (Heap: 52MB)
+2025-12-19 17:22:55 +05:30: 📋 Memory Usage: 44MB (Heap: 53MB)
+2025-12-19 17:22:55 +05:30: 📋 Memory Usage: 44MB (Heap: 51MB)
+2025-12-19 17:22:55 +05:30: 📋 Memory Usage: 45MB (Heap: 51MB)
+2025-12-19 17:22:55 +05:30: 📋 Memory Usage: 44MB (Heap: 52MB)
+2025-12-19 17:22:55 +05:30: 📋 Memory Usage: 44MB (Heap: 52MB)
+2025-12-19 17:47:05 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 17:47:05 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 17:47:05 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 17:47:05 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 17:47:05 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 17:47:05 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 17:47:05 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 17:47:05 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 17:47:05 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 17:47:05 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 17:47:05 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 17:47:05 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 17:47:05 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 17:47:25 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 17:47:26 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 17:47:26 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 17:47:26 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 17:47:26 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 17:47:26 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 17:47:26 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 17:57:58 +05:30: 📋 Memory Usage: 44MB (Heap: 51MB)
+2025-12-19 17:57:58 +05:30: 📋 Memory Usage: 44MB (Heap: 52MB)
+2025-12-19 17:57:58 +05:30: 📋 Memory Usage: 44MB (Heap: 52MB)
+2025-12-19 17:57:58 +05:30: 📋 Memory Usage: 44MB (Heap: 53MB)
+2025-12-19 17:57:58 +05:30: 📋 Memory Usage: 44MB (Heap: 52MB)
+2025-12-19 17:57:58 +05:30: 📋 Memory Usage: 43MB (Heap: 51MB)
+2025-12-19 17:57:58 +05:30: 📋 Memory Usage: 44MB (Heap: 52MB)
+2025-12-19 17:57:58 +05:30: 📋 Memory Usage: 44MB (Heap: 51MB)
+2025-12-19 17:57:58 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 17:57:58 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 17:57:58 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 17:57:58 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 17:57:58 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 17:57:58 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:16:29 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:16:29 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:16:29 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:34:34 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:34:34 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:34:34 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:34:34 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:34:34 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:34:34 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:34:34 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:34:34 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:34:34 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 6:34:34 PM
+2025-12-19 18:34:34 +05:30: 📋 Memory Usage: 46MB (Heap: 51MB)
+2025-12-19 18:34:34 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 6:34:34 PM
+2025-12-19 18:34:34 +05:30: 📋 Memory Usage: 45MB (Heap: 51MB)
+2025-12-19 18:34:34 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 6:34:34 PM
+2025-12-19 18:34:34 +05:30: 📋 Memory Usage: 45MB (Heap: 52MB)
+2025-12-19 18:34:34 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 6:34:34 PM
+2025-12-19 18:34:34 +05:30: 📋 Memory Usage: 45MB (Heap: 53MB)
+2025-12-19 18:34:34 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 6:34:34 PM
+2025-12-19 18:34:34 +05:30: 📋 Memory Usage: 45MB (Heap: 52MB)
+2025-12-19 18:34:34 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 6:34:34 PM
+2025-12-19 18:34:34 +05:30: 📋 Memory Usage: 45MB (Heap: 52MB)
+2025-12-19 18:34:34 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 6:34:34 PM
+2025-12-19 18:34:34 +05:30: 📋 Memory Usage: 45MB (Heap: 51MB)
+2025-12-19 18:34:34 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 6:34:34 PM
+2025-12-19 18:34:34 +05:30: 📋 Memory Usage: 45MB (Heap: 52MB)
+2025-12-19 18:34:34 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:34:34 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:34:34 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:34:34 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:48:31 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:48:31 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:48:31 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:48:31 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:48:31 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:48:31 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:48:31 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:48:31 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:51:07 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:51:07 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:51:07 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:51:07 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:51:07 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:51:07 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:51:07 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:51:21 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:51:21 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:51:22 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:51:22 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:51:22 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 18:51:22 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:09:42 +05:30: 📋 Memory Usage: 43MB (Heap: 52MB)
+2025-12-19 19:09:42 +05:30: 📋 Memory Usage: 43MB (Heap: 51MB)
+2025-12-19 19:09:42 +05:30: 📋 Memory Usage: 42MB (Heap: 52MB)
+2025-12-19 19:09:42 +05:30: 📋 Memory Usage: 42MB (Heap: 52MB)
+2025-12-19 19:09:42 +05:30: 📋 Memory Usage: 43MB (Heap: 54MB)
+2025-12-19 19:09:42 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-19 19:09:42 +05:30: 📋 Memory Usage: 43MB (Heap: 52MB)
+2025-12-19 19:09:42 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-19 19:09:42 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:09:42 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:09:42 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:09:42 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:09:42 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:09:42 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:09:42 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:09:42 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:09:53 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:09:53 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:09:53 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:09:53 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:09:53 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:09:53 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:09:53 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:09:53 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:19:40 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:19:40 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:19:40 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:19:40 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:19:40 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:19:40 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:19:40 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:19:40 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:19:40 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:39:49 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 7:39:48 PM
+2025-12-19 19:39:49 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 7:39:48 PM
+2025-12-19 19:39:49 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 7:39:48 PM
+2025-12-19 19:39:49 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 7:39:48 PM
+2025-12-19 19:39:49 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 7:39:48 PM
+2025-12-19 19:39:49 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 7:39:48 PM
+2025-12-19 19:39:49 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 7:39:48 PM
+2025-12-19 19:39:49 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 7:39:48 PM
+2025-12-19 19:39:49 +05:30: 📋 Memory Usage: 44MB (Heap: 51MB)
+2025-12-19 19:39:49 +05:30: 📋 Memory Usage: 43MB (Heap: 51MB)
+2025-12-19 19:39:49 +05:30: 📋 Memory Usage: 44MB (Heap: 52MB)
+2025-12-19 19:39:49 +05:30: 📋 Memory Usage: 44MB (Heap: 51MB)
+2025-12-19 19:39:49 +05:30: 📋 Memory Usage: 44MB (Heap: 52MB)
+2025-12-19 19:39:49 +05:30: 📋 Memory Usage: 44MB (Heap: 53MB)
+2025-12-19 19:39:49 +05:30: 📋 Memory Usage: 44MB (Heap: 52MB)
+2025-12-19 19:39:49 +05:30: 📋 Memory Usage: 44MB (Heap: 51MB)
+2025-12-19 19:39:59 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:39:59 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:39:59 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:39:59 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:57:57 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:57:57 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 19:57:57 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:15:31 +05:30: 📋 Memory Usage: 45MB (Heap: 52MB)
+2025-12-19 20:15:31 +05:30: 📋 Memory Usage: 45MB (Heap: 53MB)
+2025-12-19 20:15:31 +05:30: 📋 Memory Usage: 45MB (Heap: 52MB)
+2025-12-19 20:15:31 +05:30: 📋 Memory Usage: 45MB (Heap: 51MB)
+2025-12-19 20:15:31 +05:30: 📋 Memory Usage: 45MB (Heap: 51MB)
+2025-12-19 20:15:31 +05:30: 📋 Memory Usage: 44MB (Heap: 51MB)
+2025-12-19 20:15:31 +05:30: 📋 Memory Usage: 44MB (Heap: 51MB)
+2025-12-19 20:15:31 +05:30: 📋 Memory Usage: 44MB (Heap: 52MB)
+2025-12-19 20:15:33 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:15:33 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:15:33 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:15:33 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:15:33 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:15:33 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:15:33 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:15:33 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:32:56 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:32:56 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:32:56 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:32:56 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:32:56 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:32:56 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:32:56 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:32:56 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:32:56 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:32:56 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:32:56 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:32:56 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:32:56 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:32:56 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:32:56 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:32:56 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:50:18 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 8:50:18 PM
+2025-12-19 20:50:18 +05:30: 📋 Memory Usage: 42MB (Heap: 52MB)
+2025-12-19 20:50:18 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 8:50:18 PM
+2025-12-19 20:50:18 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-19 20:50:18 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 8:50:18 PM
+2025-12-19 20:50:18 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 8:50:18 PM
+2025-12-19 20:50:18 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 8:50:18 PM
+2025-12-19 20:50:18 +05:30: 📋 Memory Usage: 42MB (Heap: 50MB)
+2025-12-19 20:50:18 +05:30: 📋 Memory Usage: 42MB (Heap: 50MB)
+2025-12-19 20:50:18 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 8:50:18 PM
+2025-12-19 20:50:18 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-19 20:50:18 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 8:50:18 PM
+2025-12-19 20:50:18 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-19 20:50:18 +05:30: 📋 Memory Usage: 42MB (Heap: 50MB)
+2025-12-19 20:50:18 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 8:50:18 PM
+2025-12-19 20:50:18 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-19 20:50:20 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:50:20 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:50:20 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:50:20 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:50:20 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:50:20 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:50:20 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 20:50:21 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:06:45 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:06:45 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:06:45 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:06:45 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:06:45 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:06:45 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:06:45 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:06:45 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:06:45 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:06:45 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:06:45 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:06:45 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:06:46 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:06:46 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:06:45 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:06:46 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:06:45 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:23:12 +05:30: 📋 Memory Usage: 43MB (Heap: 51MB)
+2025-12-19 21:23:12 +05:30: 📋 Memory Usage: 42MB (Heap: 50MB)
+2025-12-19 21:23:13 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-19 21:23:13 +05:30: 📋 Memory Usage: 43MB (Heap: 50MB)
+2025-12-19 21:23:13 +05:30: 📋 Memory Usage: 43MB (Heap: 51MB)
+2025-12-19 21:23:13 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-19 21:23:13 +05:30: 📋 Memory Usage: 43MB (Heap: 50MB)
+2025-12-19 21:23:14 +05:30: 📋 Memory Usage: 43MB (Heap: 50MB)
+2025-12-19 21:23:15 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:23:15 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:23:15 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:23:16 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:23:16 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:23:16 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:33:57 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:33:57 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:33:57 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:33:57 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:33:57 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:33:57 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:33:57 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:33:57 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:33:57 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:33:57 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:33:57 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:33:57 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:33:57 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:33:57 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:34:07 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:34:07 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:34:07 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:34:07 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:34:07 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:34:07 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:34:07 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:34:09 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:50:00 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:50:00 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:50:00 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:50:00 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:50:00 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:50:00 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:50:00 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:50:00 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:50:00 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:50:00 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:50:00 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:50:00 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 21:50:00 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 22:07:41 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 10:07:41 PM
+2025-12-19 22:07:41 +05:30: 📋 Memory Usage: 44MB (Heap: 51MB)
+2025-12-19 22:07:41 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 10:07:41 PM
+2025-12-19 22:07:41 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 10:07:41 PM
+2025-12-19 22:07:41 +05:30: 📋 Memory Usage: 43MB (Heap: 51MB)
+2025-12-19 22:07:41 +05:30: 📋 Memory Usage: 43MB (Heap: 50MB)
+2025-12-19 22:07:41 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 10:07:41 PM
+2025-12-19 22:07:41 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 10:07:41 PM
+2025-12-19 22:07:41 +05:30: 📋 Memory Usage: 43MB (Heap: 50MB)
+2025-12-19 22:07:41 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 10:07:41 PM
+2025-12-19 22:07:41 +05:30: 📋 Memory Usage: 43MB (Heap: 50MB)
+2025-12-19 22:07:41 +05:30: 📋 Memory Usage: 43MB (Heap: 50MB)
+2025-12-19 22:07:41 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 10:07:41 PM
+2025-12-19 22:07:41 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 10:07:41 PM
+2025-12-19 22:07:41 +05:30: 📋 Memory Usage: 44MB (Heap: 51MB)
+2025-12-19 22:07:41 +05:30: 📋 Memory Usage: 44MB (Heap: 51MB)
+2025-12-19 22:07:42 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 22:07:42 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 22:07:42 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 22:07:42 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 22:07:42 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 22:07:42 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 22:07:42 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 22:07:42 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 22:20:12 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 22:20:12 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 22:20:12 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 22:20:12 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 22:20:12 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 22:20:12 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 22:20:12 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 22:20:12 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 22:20:12 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 22:20:12 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 22:20:12 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 22:20:12 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 22:20:12 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 22:20:12 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-19 22:52:19 +05:30: 📋 Memory Usage: 45MB (Heap: 50MB)
+2025-12-19 22:52:19 +05:30: 📋 Memory Usage: 44MB (Heap: 51MB)
+2025-12-19 22:52:19 +05:30: 📋 Memory Usage: 45MB (Heap: 51MB)
+2025-12-19 22:52:19 +05:30: 📋 Memory Usage: 44MB (Heap: 50MB)
+2025-12-19 22:52:19 +05:30: 📋 Memory Usage: 45MB (Heap: 51MB)
+2025-12-19 22:52:19 +05:30: 📋 Memory Usage: 44MB (Heap: 50MB)
+2025-12-19 22:52:19 +05:30: 📋 Memory Usage: 44MB (Heap: 50MB)
+2025-12-19 22:52:19 +05:30: 📋 Memory Usage: 44MB (Heap: 51MB)
+2025-12-19 23:09:34 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 11:09:34 PM
+2025-12-19 23:09:34 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 11:09:34 PM
+2025-12-19 23:09:34 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 11:09:34 PM
+2025-12-19 23:09:34 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 11:09:34 PM
+2025-12-19 23:09:34 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 11:09:34 PM
+2025-12-19 23:09:34 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 11:09:34 PM
+2025-12-19 23:09:34 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 11:09:34 PM
+2025-12-19 23:09:34 +05:30: ♻️ OTP logs cleaned up at 12/19/2025, 11:09:34 PM
+2025-12-19 23:25:45 +05:30: 📋 Memory Usage: 45MB (Heap: 51MB)
+2025-12-19 23:25:45 +05:30: 📋 Memory Usage: 45MB (Heap: 51MB)
+2025-12-19 23:25:45 +05:30: 📋 Memory Usage: 45MB (Heap: 51MB)
+2025-12-19 23:25:45 +05:30: 📋 Memory Usage: 45MB (Heap: 50MB)
+2025-12-19 23:25:45 +05:30: 📋 Memory Usage: 45MB (Heap: 50MB)
+2025-12-19 23:25:45 +05:30: 📋 Memory Usage: 45MB (Heap: 51MB)
+2025-12-19 23:25:45 +05:30: 📋 Memory Usage: 45MB (Heap: 50MB)
+2025-12-19 23:25:45 +05:30: 📋 Memory Usage: 44MB (Heap: 50MB)
+2025-12-20 00:10:19 +05:30: 📋 Memory Usage: 45MB (Heap: 51MB)
+2025-12-20 00:10:19 +05:30: 📋 Memory Usage: 45MB (Heap: 50MB)
+2025-12-20 00:10:19 +05:30: 📋 Memory Usage: 45MB (Heap: 51MB)
+2025-12-20 00:10:19 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 12:10:19 AM
+2025-12-20 00:10:19 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 12:10:19 AM
+2025-12-20 00:10:19 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 12:10:19 AM
+2025-12-20 00:10:19 +05:30: 📋 Memory Usage: 45MB (Heap: 51MB)
+2025-12-20 00:10:19 +05:30: 📋 Memory Usage: 45MB (Heap: 51MB)
+2025-12-20 00:10:19 +05:30: 📋 Memory Usage: 45MB (Heap: 50MB)
+2025-12-20 00:10:19 +05:30: 📋 Memory Usage: 45MB (Heap: 50MB)
+2025-12-20 00:10:19 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 12:10:19 AM
+2025-12-20 00:10:19 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 12:10:19 AM
+2025-12-20 00:10:19 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 12:10:19 AM
+2025-12-20 00:10:19 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 12:10:19 AM
+2025-12-20 00:10:19 +05:30: 📋 Memory Usage: 45MB (Heap: 50MB)
+2025-12-20 00:10:19 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 12:10:19 AM
+2025-12-20 00:45:34 +05:30: 📋 Memory Usage: 45MB (Heap: 50MB)
+2025-12-20 00:45:35 +05:30: 📋 Memory Usage: 45MB (Heap: 51MB)
+2025-12-20 00:45:35 +05:30: 📋 Memory Usage: 45MB (Heap: 51MB)
+2025-12-20 00:45:35 +05:30: 📋 Memory Usage: 45MB (Heap: 50MB)
+2025-12-20 00:45:35 +05:30: 📋 Memory Usage: 45MB (Heap: 51MB)
+2025-12-20 00:45:35 +05:30: 📋 Memory Usage: 45MB (Heap: 51MB)
+2025-12-20 00:45:35 +05:30: 📋 Memory Usage: 45MB (Heap: 50MB)
+2025-12-20 00:45:35 +05:30: 📋 Memory Usage: 45MB (Heap: 50MB)
+2025-12-20 01:18:11 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 1:18:11 AM
+2025-12-20 01:18:11 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 1:18:11 AM
+2025-12-20 01:18:11 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 1:18:11 AM
+2025-12-20 01:18:11 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 1:18:11 AM
+2025-12-20 01:18:11 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 1:18:11 AM
+2025-12-20 01:18:11 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 1:18:11 AM
+2025-12-20 01:18:11 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 1:18:11 AM
+2025-12-20 01:18:11 +05:30: 📋 Memory Usage: 46MB (Heap: 50MB)
+2025-12-20 01:18:11 +05:30: 📋 Memory Usage: 45MB (Heap: 51MB)
+2025-12-20 01:18:11 +05:30: 📋 Memory Usage: 45MB (Heap: 51MB)
+2025-12-20 01:18:11 +05:30: 📋 Memory Usage: 45MB (Heap: 50MB)
+2025-12-20 01:18:11 +05:30: 📋 Memory Usage: 46MB (Heap: 50MB)
+2025-12-20 01:18:11 +05:30: 📋 Memory Usage: 46MB (Heap: 51MB)
+2025-12-20 01:18:11 +05:30: 📋 Memory Usage: 45MB (Heap: 51MB)
+2025-12-20 01:18:12 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 1:18:12 AM
+2025-12-20 01:18:12 +05:30: 📋 Memory Usage: 46MB (Heap: 50MB)
+2025-12-20 01:49:19 +05:30: 📋 Memory Usage: 45MB (Heap: 50MB)
+2025-12-20 01:49:19 +05:30: 📋 Memory Usage: 45MB (Heap: 50MB)
+2025-12-20 01:49:19 +05:30: 📋 Memory Usage: 46MB (Heap: 51MB)
+2025-12-20 01:49:19 +05:30: 📋 Memory Usage: 46MB (Heap: 51MB)
+2025-12-20 01:49:19 +05:30: 📋 Memory Usage: 46MB (Heap: 51MB)
+2025-12-20 01:49:19 +05:30: 📋 Memory Usage: 45MB (Heap: 51MB)
+2025-12-20 01:49:19 +05:30: 📋 Memory Usage: 46MB (Heap: 50MB)
+2025-12-20 01:49:20 +05:30: 📋 Memory Usage: 45MB (Heap: 51MB)
+2025-12-20 02:24:33 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 2:24:33 AM
+2025-12-20 02:24:33 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 2:24:33 AM
+2025-12-20 02:24:33 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 2:24:33 AM
+2025-12-20 02:24:33 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 2:24:33 AM
+2025-12-20 02:24:33 +05:30: 📋 Memory Usage: 45MB (Heap: 51MB)
+2025-12-20 02:24:33 +05:30: 📋 Memory Usage: 46MB (Heap: 51MB)
+2025-12-20 02:24:33 +05:30: 📋 Memory Usage: 46MB (Heap: 51MB)
+2025-12-20 02:24:33 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 2:24:33 AM
+2025-12-20 02:24:33 +05:30: 📋 Memory Usage: 46MB (Heap: 50MB)
+2025-12-20 02:24:33 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 2:24:33 AM
+2025-12-20 02:24:33 +05:30: 📋 Memory Usage: 46MB (Heap: 51MB)
+2025-12-20 02:24:33 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 2:24:33 AM
+2025-12-20 02:24:33 +05:30: 📋 Memory Usage: 45MB (Heap: 50MB)
+2025-12-20 02:24:33 +05:30: 📋 Memory Usage: 45MB (Heap: 50MB)
+2025-12-20 02:24:33 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 2:24:33 AM
+2025-12-20 02:24:33 +05:30: 📋 Memory Usage: 45MB (Heap: 50MB)
+2025-12-20 02:57:38 +05:30: 📋 Memory Usage: 46MB (Heap: 51MB)
+2025-12-20 02:57:38 +05:30: 📋 Memory Usage: 46MB (Heap: 50MB)
+2025-12-20 02:57:38 +05:30: 📋 Memory Usage: 46MB (Heap: 50MB)
+2025-12-20 02:57:38 +05:30: 📋 Memory Usage: 46MB (Heap: 51MB)
+2025-12-20 02:57:38 +05:30: 📋 Memory Usage: 46MB (Heap: 51MB)
+2025-12-20 02:57:38 +05:30: 📋 Memory Usage: 46MB (Heap: 50MB)
+2025-12-20 02:57:38 +05:30: 📋 Memory Usage: 46MB (Heap: 51MB)
+2025-12-20 02:57:38 +05:30: 📋 Memory Usage: 46MB (Heap: 50MB)
+2025-12-20 03:40:40 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 3:40:40 AM
+2025-12-20 03:40:40 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 3:40:40 AM
+2025-12-20 03:40:40 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 3:40:40 AM
+2025-12-20 03:40:40 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 3:40:40 AM
+2025-12-20 03:40:40 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 3:40:40 AM
+2025-12-20 03:40:40 +05:30: 📋 Memory Usage: 47MB (Heap: 51MB)
+2025-12-20 03:40:40 +05:30: 📋 Memory Usage: 46MB (Heap: 50MB)
+2025-12-20 03:40:40 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 3:40:40 AM
+2025-12-20 03:40:40 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 3:40:40 AM
+2025-12-20 03:40:40 +05:30: 📋 Memory Usage: 46MB (Heap: 51MB)
+2025-12-20 03:40:40 +05:30: 📋 Memory Usage: 46MB (Heap: 50MB)
+2025-12-20 03:40:40 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 3:40:40 AM
+2025-12-20 03:40:40 +05:30: 📋 Memory Usage: 46MB (Heap: 51MB)
+2025-12-20 03:40:40 +05:30: 📋 Memory Usage: 46MB (Heap: 51MB)
+2025-12-20 03:40:40 +05:30: 📋 Memory Usage: 46MB (Heap: 50MB)
+2025-12-20 03:40:40 +05:30: 📋 Memory Usage: 47MB (Heap: 51MB)
+2025-12-20 04:15:00 +05:30: 📋 Memory Usage: 46MB (Heap: 51MB)
+2025-12-20 04:15:00 +05:30: 📋 Memory Usage: 46MB (Heap: 50MB)
+2025-12-20 04:15:00 +05:30: 📋 Memory Usage: 46MB (Heap: 50MB)
+2025-12-20 04:15:00 +05:30: 📋 Memory Usage: 46MB (Heap: 51MB)
+2025-12-20 04:15:00 +05:30: 📋 Memory Usage: 46MB (Heap: 51MB)
+2025-12-20 04:15:00 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-20 04:15:00 +05:30: 📋 Memory Usage: 46MB (Heap: 51MB)
+2025-12-20 04:15:00 +05:30: 📋 Memory Usage: 46MB (Heap: 51MB)
+2025-12-20 04:48:26 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 4:48:26 AM
+2025-12-20 04:48:26 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 4:48:26 AM
+2025-12-20 04:48:26 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 4:48:26 AM
+2025-12-20 04:48:26 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 4:48:26 AM
+2025-12-20 04:48:26 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 4:48:26 AM
+2025-12-20 04:48:26 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 4:48:26 AM
+2025-12-20 04:48:26 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 4:48:26 AM
+2025-12-20 04:48:26 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 4:48:26 AM
+2025-12-20 04:48:26 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-20 04:48:26 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-20 04:48:26 +05:30: 📋 Memory Usage: 47MB (Heap: 51MB)
+2025-12-20 04:48:26 +05:30: 📋 Memory Usage: 47MB (Heap: 51MB)
+2025-12-20 04:48:26 +05:30: 📋 Memory Usage: 42MB (Heap: 50MB)
+2025-12-20 04:48:26 +05:30: 📋 Memory Usage: 41MB (Heap: 50MB)
+2025-12-20 04:48:26 +05:30: 📋 Memory Usage: 47MB (Heap: 50MB)
+2025-12-20 04:48:26 +05:30: 📋 Memory Usage: 47MB (Heap: 51MB)
+2025-12-20 05:21:56 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-20 05:21:56 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-20 05:21:56 +05:30: 📋 Memory Usage: 42MB (Heap: 50MB)
+2025-12-20 05:21:56 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-20 05:21:56 +05:30: 📋 Memory Usage: 47MB (Heap: 50MB)
+2025-12-20 05:21:56 +05:30: 📋 Memory Usage: 47MB (Heap: 51MB)
+2025-12-20 05:21:56 +05:30: 📋 Memory Usage: 42MB (Heap: 50MB)
+2025-12-20 05:21:56 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-20 05:56:31 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 5:56:31 AM
+2025-12-20 05:56:31 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 5:56:31 AM
+2025-12-20 05:56:31 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 5:56:31 AM
+2025-12-20 05:56:31 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 5:56:31 AM
+2025-12-20 05:56:31 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 5:56:31 AM
+2025-12-20 05:56:31 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 5:56:31 AM
+2025-12-20 05:56:31 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 5:56:31 AM
+2025-12-20 05:56:31 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 5:56:31 AM
+2025-12-20 05:56:31 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-20 05:56:31 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-20 05:56:31 +05:30: 📋 Memory Usage: 42MB (Heap: 50MB)
+2025-12-20 05:56:31 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-20 05:56:31 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-20 05:56:31 +05:30: 📋 Memory Usage: 41MB (Heap: 51MB)
+2025-12-20 05:56:31 +05:30: 📋 Memory Usage: 43MB (Heap: 50MB)
+2025-12-20 05:56:31 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-20 06:29:11 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-20 06:29:11 +05:30: 📋 Memory Usage: 42MB (Heap: 50MB)
+2025-12-20 06:29:11 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-20 06:29:11 +05:30: 📋 Memory Usage: 43MB (Heap: 51MB)
+2025-12-20 06:29:11 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-20 06:29:11 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-20 06:29:11 +05:30: 📋 Memory Usage: 43MB (Heap: 50MB)
+2025-12-20 06:29:11 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-20 07:03:32 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 7:03:32 AM
+2025-12-20 07:03:32 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 7:03:32 AM
+2025-12-20 07:03:32 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 7:03:32 AM
+2025-12-20 07:03:32 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 7:03:32 AM
+2025-12-20 07:03:32 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 7:03:32 AM
+2025-12-20 07:03:32 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 7:03:32 AM
+2025-12-20 07:03:32 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 7:03:32 AM
+2025-12-20 07:03:32 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 7:03:32 AM
+2025-12-20 07:03:32 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-20 07:03:32 +05:30: 📋 Memory Usage: 43MB (Heap: 50MB)
+2025-12-20 07:03:32 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-20 07:03:32 +05:30: 📋 Memory Usage: 42MB (Heap: 52MB)
+2025-12-20 07:03:32 +05:30: 📋 Memory Usage: 42MB (Heap: 52MB)
+2025-12-20 07:03:32 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-20 07:03:32 +05:30: 📋 Memory Usage: 43MB (Heap: 50MB)
+2025-12-20 07:03:32 +05:30: 📋 Memory Usage: 43MB (Heap: 51MB)
+2025-12-20 07:34:47 +05:30: 📋 Memory Usage: 43MB (Heap: 51MB)
+2025-12-20 07:34:47 +05:30: 📋 Memory Usage: 43MB (Heap: 50MB)
+2025-12-20 07:34:47 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-20 07:34:47 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-20 07:34:47 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-20 07:34:47 +05:30: 📋 Memory Usage: 43MB (Heap: 51MB)
+2025-12-20 07:34:47 +05:30: 📋 Memory Usage: 43MB (Heap: 50MB)
+2025-12-20 07:34:47 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-20 08:09:37 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 8:09:37 AM
+2025-12-20 08:09:37 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 8:09:37 AM
+2025-12-20 08:09:37 +05:30: 📋 Memory Usage: 43MB (Heap: 50MB)
+2025-12-20 08:09:37 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 8:09:37 AM
+2025-12-20 08:09:37 +05:30: 📋 Memory Usage: 43MB (Heap: 51MB)
+2025-12-20 08:09:37 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 8:09:37 AM
+2025-12-20 08:09:37 +05:30: 📋 Memory Usage: 43MB (Heap: 51MB)
+2025-12-20 08:09:37 +05:30: 📋 Memory Usage: 43MB (Heap: 51MB)
+2025-12-20 08:09:37 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 8:09:37 AM
+2025-12-20 08:09:37 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 8:09:37 AM
+2025-12-20 08:09:37 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 8:09:37 AM
+2025-12-20 08:09:37 +05:30: 📋 Memory Usage: 43MB (Heap: 51MB)
+2025-12-20 08:09:37 +05:30: 📋 Memory Usage: 42MB (Heap: 51MB)
+2025-12-20 08:09:37 +05:30: 📋 Memory Usage: 43MB (Heap: 50MB)
+2025-12-20 08:09:37 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 8:09:37 AM
+2025-12-20 08:09:37 +05:30: 📋 Memory Usage: 43MB (Heap: 52MB)
+2025-12-20 08:42:03 +05:30: 📋 Memory Usage: 43MB (Heap: 52MB)
+2025-12-20 08:42:03 +05:30: 📋 Memory Usage: 43MB (Heap: 51MB)
+2025-12-20 08:42:03 +05:30: 📋 Memory Usage: 43MB (Heap: 51MB)
+2025-12-20 08:42:03 +05:30: 📋 Memory Usage: 44MB (Heap: 50MB)
+2025-12-20 08:42:03 +05:30: 📋 Memory Usage: 43MB (Heap: 51MB)
+2025-12-20 08:42:03 +05:30: 📋 Memory Usage: 43MB (Heap: 51MB)
+2025-12-20 08:42:03 +05:30: 📋 Memory Usage: 43MB (Heap: 51MB)
+2025-12-20 08:42:03 +05:30: 📋 Memory Usage: 44MB (Heap: 50MB)
+2025-12-20 09:13:21 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 9:13:21 AM
+2025-12-20 09:13:21 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 9:13:21 AM
+2025-12-20 09:13:21 +05:30: 📋 Memory Usage: 44MB (Heap: 50MB)
+2025-12-20 09:13:21 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 9:13:21 AM
+2025-12-20 09:13:21 +05:30: 📋 Memory Usage: 44MB (Heap: 51MB)
+2025-12-20 09:13:21 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 9:13:21 AM
+2025-12-20 09:13:21 +05:30: 📋 Memory Usage: 44MB (Heap: 52MB)
+2025-12-20 09:13:21 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 9:13:21 AM
+2025-12-20 09:13:21 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 9:13:21 AM
+2025-12-20 09:13:21 +05:30: 📋 Memory Usage: 44MB (Heap: 51MB)
+2025-12-20 09:13:21 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 9:13:21 AM
+2025-12-20 09:13:21 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 9:13:21 AM
+2025-12-20 09:13:21 +05:30: 📋 Memory Usage: 44MB (Heap: 50MB)
+2025-12-20 09:13:21 +05:30: 📋 Memory Usage: 44MB (Heap: 51MB)
+2025-12-20 09:13:21 +05:30: 📋 Memory Usage: 43MB (Heap: 51MB)
+2025-12-20 09:13:21 +05:30: 📋 Memory Usage: 44MB (Heap: 51MB)
+2025-12-20 09:34:14 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:34:15 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:34:15 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:34:15 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:34:15 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:39:48 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:39:48 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:39:48 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:39:48 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:39:48 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:39:58 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:39:58 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:39:58 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:39:58 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:43:22 +05:30: 📋 Memory Usage: 44MB (Heap: 50MB)
+2025-12-20 09:43:22 +05:30: 📋 Memory Usage: 43MB (Heap: 52MB)
+2025-12-20 09:43:22 +05:30: 📋 Memory Usage: 43MB (Heap: 52MB)
+2025-12-20 09:43:22 +05:30: 📋 Memory Usage: 43MB (Heap: 52MB)
+2025-12-20 09:43:22 +05:30: 📋 Memory Usage: 44MB (Heap: 50MB)
+2025-12-20 09:43:22 +05:30: 📋 Memory Usage: 43MB (Heap: 50MB)
+2025-12-20 09:43:22 +05:30: 📋 Memory Usage: 43MB (Heap: 51MB)
+2025-12-20 09:43:22 +05:30: 📋 Memory Usage: 44MB (Heap: 51MB)
+2025-12-20 09:45:33 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:45:33 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:45:33 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:45:33 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:45:33 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:45:33 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:45:33 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:45:33 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:45:33 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:45:33 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:45:33 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:45:33 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:49:44 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:49:44 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:49:44 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:49:44 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:49:44 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:49:44 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:49:44 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:49:44 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:51:14 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:51:14 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:51:14 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:51:14 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:51:15 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:51:48 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:51:48 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:51:48 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:51:48 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 09:51:48 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 10:13:22 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 10:13:22 AM
+2025-12-20 10:13:22 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 10:13:22 AM
+2025-12-20 10:13:22 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 10:13:22 AM
+2025-12-20 10:13:22 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 10:13:22 AM
+2025-12-20 10:13:22 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 10:13:22 AM
+2025-12-20 10:13:22 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 10:13:22 AM
+2025-12-20 10:13:22 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 10:13:22 AM
+2025-12-20 10:13:22 +05:30: 📋 Memory Usage: 45MB (Heap: 52MB)
+2025-12-20 10:13:22 +05:30: ♻️ OTP logs cleaned up at 12/20/2025, 10:13:22 AM
+2025-12-20 10:13:22 +05:30: 📋 Memory Usage: 45MB (Heap: 52MB)
+2025-12-20 10:13:22 +05:30: 📋 Memory Usage: 43MB (Heap: 53MB)
+2025-12-20 10:13:22 +05:30: 📋 Memory Usage: 45MB (Heap: 52MB)
+2025-12-20 10:13:22 +05:30: 📋 Memory Usage: 45MB (Heap: 53MB)
+2025-12-20 10:13:22 +05:30: 📋 Memory Usage: 45MB (Heap: 52MB)
+2025-12-20 10:13:22 +05:30: 📋 Memory Usage: 44MB (Heap: 53MB)
+2025-12-20 10:13:22 +05:30: 📋 Memory Usage: 45MB (Heap: 52MB)
+2025-12-20 10:39:47 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 10:39:48 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 10:39:48 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 10:39:48 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 10:39:48 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 10:39:48 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 10:39:48 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 10:39:48 +05:30: ✅ MongoDB reconnected successfully!
+2025-12-20 10:43:22 +05:30: 📋 Memory Usage: 44MB (Heap: 52MB)
+2025-12-20 10:43:22 +05:30: 📋 Memory Usage: 43MB (Heap: 53MB)
+2025-12-20 10:43:22 +05:30: 📋 Memory Usage: 44MB (Heap: 52MB)
+2025-12-20 10:43:22 +05:30: 📋 Memory Usage: 43MB (Heap: 53MB)
+2025-12-20 10:43:22 +05:30: 📋 Memory Usage: 43MB (Heap: 53MB)
+2025-12-20 10:43:22 +05:30: 📋 Memory Usage: 43MB (Heap: 52MB)
+2025-12-20 10:43:22 +05:30: 📋 Memory Usage: 44MB (Heap: 53MB)
+2025-12-20 10:43:22 +05:30: 📋 Memory Usage: 44MB (Heap: 52MB)
+2025-12-20 10:45:17 +05:30: 📴 SIGINT received. Starting graceful shutdown...
+2025-12-20 10:45:17 +05:30: 📴 SIGINT received. Starting graceful shutdown...
+2025-12-20 10:45:17 +05:30: 📴 SIGINT received. Starting graceful shutdown...
+2025-12-20 10:45:17 +05:30: 📴 SIGINT received. Starting graceful shutdown...
+2025-12-20 10:45:17 +05:30: 📴 SIGINT received. Starting graceful shutdown...
+2025-12-20 10:45:17 +05:30: 📴 SIGINT received. Starting graceful shutdown...
+2025-12-20 10:45:17 +05:30: 📴 SIGINT received. Starting graceful shutdown...
+2025-12-20 10:45:17 +05:30: 📴 SIGINT received. Starting graceful shutdown...
+2025-12-20 10:45:19 +05:30: [MULTER] Using upload directory: /var/www/uploads/blog_photos
+2025-12-20 10:45:19 +05:30: [MULTER] Using upload directory: /var/www/uploads/blog_photos
+2025-12-20 10:45:19 +05:30: [MULTER] Using upload directory: /var/www/uploads/blog_photos
+2025-12-20 10:45:19 +05:30: [MULTER] Directory does not exist. Creating...
+2025-12-20 10:45:19 +05:30: ⚠️  No Redis configuration found. Running without cache.
+2025-12-20 10:45:19 +05:30: ✅ Worker 16616 running on port 5000
+2025-12-20 10:45:19 +05:30: 🌍 Environment: production
+2025-12-20 10:45:19 +05:30: 🕰 Started at: 2025-12-20T05:15:19.839Z
+2025-12-20 10:45:19 +05:30: 📊 Process ID: 16616
+2025-12-20 10:45:19 +05:30: 📋 Memory: 70MB
+2025-12-20 10:45:19 +05:30: [MULTER] Using upload directory: /var/www/uploads/blog_photos
+2025-12-20 10:45:19 +05:30: [MULTER] Using upload directory: /var/www/uploads/blog_photos
+2025-12-20 10:45:19 +05:30: [MULTER] Directory does not exist. Creating...
+2025-12-20 10:45:19 +05:30: ⚠️  No Redis configuration found. Running without cache.
+2025-12-20 10:45:19 +05:30: ✅ Worker 16615 running on port 5000
+2025-12-20 10:45:19 +05:30: 🌍 Environment: production
+2025-12-20 10:45:19 +05:30: 🕰 Started at: 2025-12-20T05:15:19.901Z
+2025-12-20 10:45:19 +05:30: 📊 Process ID: 16615
+2025-12-20 10:45:19 +05:30: 📋 Memory: 66MB
+2025-12-20 10:45:19 +05:30: [MULTER] Using upload directory: /var/www/uploads/blog_photos
+2025-12-20 10:45:19 +05:30: [MULTER] Using upload directory: /var/www/uploads/blog_photos
+2025-12-20 10:45:19 +05:30: [MULTER] Directory does not exist. Creating...
+2025-12-20 10:45:19 +05:30: ⚠️  No Redis configuration found. Running without cache.
+2025-12-20 10:45:19 +05:30: ✅ Worker 16617 running on port 5000
+2025-12-20 10:45:19 +05:30: 🌍 Environment: production
+2025-12-20 10:45:19 +05:30: 🕰 Started at: 2025-12-20T05:15:19.976Z
+2025-12-20 10:45:19 +05:30: 📊 Process ID: 16617
+2025-12-20 10:45:19 +05:30: 📋 Memory: 66MB
+2025-12-20 10:45:20 +05:30: [MULTER] Using upload directory: /var/www/uploads/blog_photos
+2025-12-20 10:45:19 +05:30: [MULTER] Directory does not exist. Creating...
+2025-12-20 10:45:20 +05:30: ⚠️  No Redis configuration found. Running without cache.
+2025-12-20 10:45:20 +05:30: ✅ Worker 16618 running on port 5000
+2025-12-20 10:45:20 +05:30: 🌍 Environment: production
+2025-12-20 10:45:20 +05:30: 🕰 Started at: 2025-12-20T05:15:20.045Z
+2025-12-20 10:45:20 +05:30: 📊 Process ID: 16618
+2025-12-20 10:45:20 +05:30: 📋 Memory: 66MB
+2025-12-20 10:45:19 +05:30: [MULTER] Directory does not exist. Creating...
+2025-12-20 10:45:20 +05:30: ⚠️  No Redis configuration found. Running without cache.
+2025-12-20 10:45:20 +05:30: ✅ Worker 16619 running on port 5000
+2025-12-20 10:45:20 +05:30: 🌍 Environment: production
+2025-12-20 10:45:20 +05:30: 🕰 Started at: 2025-12-20T05:15:20.061Z
+2025-12-20 10:45:20 +05:30: 📊 Process ID: 16619
+2025-12-20 10:45:20 +05:30: 📋 Memory: 66MB
+2025-12-20 10:45:19 +05:30: [MULTER] Directory does not exist. Creating...
+2025-12-20 10:45:20 +05:30: ⚠️  No Redis configuration found. Running without cache.
+2025-12-20 10:45:20 +05:30: ✅ Worker 16620 running on port 5000
+2025-12-20 10:45:20 +05:30: 🌍 Environment: production
+2025-12-20 10:45:20 +05:30: 🕰 Started at: 2025-12-20T05:15:20.106Z
+2025-12-20 10:45:20 +05:30: 📊 Process ID: 16620
+2025-12-20 10:45:20 +05:30: 📋 Memory: 68MB
+2025-12-20 10:45:19 +05:30: [MULTER] Directory does not exist. Creating...
+2025-12-20 10:45:20 +05:30: ⚠️  No Redis configuration found. Running without cache.
+2025-12-20 10:45:20 +05:30: ✅ Worker 16621 running on port 5000
+2025-12-20 10:45:20 +05:30: 🌍 Environment: production
+2025-12-20 10:45:20 +05:30: 🕰 Started at: 2025-12-20T05:15:20.137Z
+2025-12-20 10:45:20 +05:30: 📊 Process ID: 16621
+2025-12-20 10:45:20 +05:30: 📋 Memory: 65MB
+2025-12-20 10:45:20 +05:30: [MULTER] Directory does not exist. Creating...
+2025-12-20 10:45:20 +05:30: ⚠️  No Redis configuration found. Running without cache.
+2025-12-20 10:45:20 +05:30: ✅ Worker 16622 running on port 5000
+2025-12-20 10:45:20 +05:30: 🌍 Environment: production
+2025-12-20 10:45:20 +05:30: 🕰 Started at: 2025-12-20T05:15:20.168Z
+2025-12-20 10:45:20 +05:30: 📊 Process ID: 16622
+2025-12-20 10:45:20 +05:30: 📋 Memory: 66MB
+2025-12-20 10:45:20 +05:30: ✅ MongoDB Connected Successfully!
+2025-12-20 10:45:20 +05:30: 📊 Database: BookMyWorker
+2025-12-20 10:45:20 +05:30: 🔗 Connection Pool: Min 5, Max 50
+2025-12-20 10:45:20 +05:30: ✅ MongoDB Connected Successfully!
+2025-12-20 10:45:20 +05:30: 📊 Database: BookMyWorker
+2025-12-20 10:45:20 +05:30: 🔗 Connection Pool: Min 5, Max 50
+2025-12-20 10:45:20 +05:30: ✅ MongoDB Connected Successfully!
+2025-12-20 10:45:20 +05:30: 📊 Database: BookMyWorker
+2025-12-20 10:45:20 +05:30: 🔗 Connection Pool: Min 5, Max 50
+2025-12-20 10:45:20 +05:30: ✅ MongoDB Connected Successfully!
+2025-12-20 10:45:20 +05:30: ✅ MongoDB Connected Successfully!
+2025-12-20 10:45:20 +05:30: 📊 Database: BookMyWorker
+2025-12-20 10:45:20 +05:30: 🔗 Connection Pool: Min 5, Max 50
+2025-12-20 10:45:20 +05:30: 📊 Database: BookMyWorker
+2025-12-20 10:45:20 +05:30: 🔗 Connection Pool: Min 5, Max 50
+2025-12-20 10:45:20 +05:30: ✅ MongoDB Connected Successfully!
+2025-12-20 10:45:20 +05:30: 📊 Database: BookMyWorker
+2025-12-20 10:45:20 +05:30: 🔗 Connection Pool: Min 5, Max 50
+2025-12-20 10:45:20 +05:30: ✅ MongoDB Connected Successfully!
+2025-12-20 10:45:20 +05:30: 📊 Database: BookMyWorker
+2025-12-20 10:45:20 +05:30: 🔗 Connection Pool: Min 5, Max 50
+2025-12-20 10:45:20 +05:30: ✅ MongoDB Connected Successfully!
+2025-12-20 10:45:20 +05:30: 📊 Database: BookMyWorker
+2025-12-20 10:45:20 +05:30: 🔗 Connection Pool: Min 5, Max 50
+2025-12-20 10:45:30 +05:30: 📴 SIGINT received. Starting graceful shutdown...
+2025-12-20 10:45:30 +05:30: 📴 SIGINT received. Starting graceful shutdown...
+2025-12-20 10:45:30 +05:30: 📴 SIGINT received. Starting graceful shutdown...
+2025-12-20 10:45:30 +05:30: 📴 SIGINT received. Starting graceful shutdown...
+2025-12-20 10:45:30 +05:30: 📴 SIGINT received. Starting graceful shutdown...
+2025-12-20 10:45:30 +05:30: 📴 SIGINT received. Starting graceful shutdown...
+2025-12-20 10:45:30 +05:30: 📴 SIGINT received. Starting graceful shutdown...
+2025-12-20 10:45:30 +05:30: 📴 SIGINT received. Starting graceful shutdown...
