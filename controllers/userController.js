@@ -1037,8 +1037,8 @@ export const unlockAgentNumber = async (req, res) => {
     // OPTIONAL: credit check
     if (employer.remainingContacts <= 0) {
       return res.status(403).json({
-        message: "Contact limit exhausted",
-      });
+  message: "Your contact limit has been exhausted. Please take a top‑up plan to unlock more contacts. Verification ensures trust and safety for all users.",
+});
     }
 
     // 3️⃣ Get agent

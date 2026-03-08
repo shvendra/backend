@@ -6,7 +6,7 @@ export const socketAuth = async (socket, next) => {
   try {
     // Get token from cookies or handshake auth
     const token = socket.handshake.auth.token || socket.handshake.headers.cookie?.match(/token=([^;]+)/)?.[1];
-    
+    console.log("Socket authentication attempt with token:", token);
     if (!token) {
       return next(new Error("No authentication token provided"));
     }

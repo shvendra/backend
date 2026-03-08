@@ -64,6 +64,134 @@ export async function addTransaction(req, res) {
     return res.status(400).json({ error: error.message });
   }
 }
+export async function addTopupTransaction(req, res) {
+  try {
+    const data = req.body;
+    const merchantOrderId = `TOPUP_${randomUUID()}`;
+
+    if (!data.employerId || !data.amount || !data.contactCount) {
+      throw new Error("Missing required fields");
+    }
+
+    const contactCount = Number(data.contactCount);
+
+    if (![50, 100].includes(contactCount)) {
+      throw new Error("Invalid contact count");
+    }
+
+    // Important:
+    // schema change nahi karna, isliye paymentType = "subscription"
+    // aur ernStatus se identify karenge ki ye contact topup hai
+    const paymentData = await createPhonePePayment(
+      {
+        ...data,
+        paymentType: "subscription",
+      },
+      merchantOrderId,
+      "subscription"
+    );
+
+    const payment = new Payment({
+      employerId: data.employerId,
+      employerName: data.firstName || "",
+      paymentType: "subscription",
+      creditTransactionId: merchantOrderId,
+      creditStatus: "pending",
+      paymentStatus: "pending",
+      creditPaymentMethod: "online",
+      amount: parseFloat(data.amount),
+      gstCharges: parseFloat(data.gstCharges || 0)
+    });
+
+    await payment.save();
+
+    return res.status(201).json({
+      success: true,
+      url: paymentData.redirectUrl,
+      merchantOrderId,
+    });
+  } catch (error) {
+    console.error("❌ addTopupTransaction Error:", error.message);
+    return res.status(400).json({
+      success: false,
+      error: error.message,
+    });
+  }
+}
+
+export async function verifyTopupTransaction(req, res) {
+  try {
+    const { merchantOrderId, transactionId, status } = req.body;
+
+    const payment = await Payment.findOne({
+      creditTransactionId: merchantOrderId,
+      paymentType: "subscription",
+      ernStatus: "contact_topup",
+    });
+
+    if (!payment) {
+      return res.status(404).json({
+        success: false,
+        error: "Topup payment not found",
+      });
+    }
+
+    if (
+      payment.creditStatus === "completed" ||
+      payment.paymentStatus === "completed"
+    ) {
+      return res.status(200).json({
+        success: true,
+        message: "Payment already processed",
+      });
+    }
+
+    if (status !== "success") {
+      payment.creditStatus = "failed";
+      payment.paymentStatus = "failed";
+      await payment.save();
+
+      return res.status(400).json({
+        success: false,
+        error: "Payment failed",
+      });
+    }
+
+    const contactCount = Number(payment.ernNumber || 0);
+
+    if (!contactCount || ![50, 100].includes(contactCount)) {
+      return res.status(400).json({
+        success: false,
+        error: "Invalid topup contact count in transaction",
+      });
+    }
+
+    payment.creditStatus = "completed";
+    payment.paymentStatus = "completed";
+    if (transactionId) {
+      payment.withdrawalTransactionId = transactionId; // reuse existing field if you want gateway txn saved
+    }
+
+    await payment.save();
+
+    // ONLY remainingContacts update
+    await User.findByIdAndUpdate(payment.employerId, {
+      $inc: { remainingContacts: contactCount },
+    });
+
+    return res.status(200).json({
+      success: true,
+      message: "Topup successful",
+      addedContacts: contactCount,
+    });
+  } catch (error) {
+    console.error("❌ verifyTopupTransaction Error:", error.message);
+    return res.status(500).json({
+      success: false,
+      error: error.message,
+    });
+  }
+}
 
 export async function addWithdrawal(req, res) {
   try {
