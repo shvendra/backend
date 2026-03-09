@@ -90,6 +90,7 @@ app.options("*", cors());
 // Create HTTP server & Socket.IO server
 const server = http.createServer(app);
 const io = new SocketIOServer(server, {
+  path: "/app/socket.io", // <--- Match the frontend path
   cors: {
     origin: process.env.NODE_ENV === "production"
       ? ["https://bookmyworkers.com", "https://www.bookmyworkers.com"]
