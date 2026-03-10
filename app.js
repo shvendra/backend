@@ -207,6 +207,8 @@ app.use(fileUpload({
 
 app.set("trust proxy", 1);
 
+app.set("trust proxy", 1);
+
 app.use(
   session({
     name: "connect.sid",
@@ -224,7 +226,6 @@ app.use(
       httpOnly: true,
       sameSite: "lax",
       maxAge: 10 * 60 * 1000,
-      domain: ".bookmyworkers.com",
       path: "/",
     },
   })
