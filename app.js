@@ -219,7 +219,7 @@ app.use(
     cookie: {
       secure: process.env.NODE_ENV === "production", // true only in prod
       httpOnly: true,
-      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+      // sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
       maxAge: 10 * 60 * 1000,
 
       // ✅ domain ONLY in production
