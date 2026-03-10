@@ -67,42 +67,25 @@ if (process.env.NODE_ENV !== 'production') {
     "http://127.0.0.1:5173"
   );
 }
-// // =========================
-// // EXPRESS CORS (API ONLY)
-// // =========================
-// app.use(
-//   cors({
-//     origin: allowedOrigins,
-//     credentials: true,
-//     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-//     allowedHeaders: [
-//       "Content-Type",
-//       "Authorization",
-//       "x-session-token",
-//     ],
-//   })
-// );
+// =========================
+// EXPRESS CORS (API ONLY)
+// =========================
+app.use(
+  cors({
+    origin: allowedOrigins,
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization",
+      "x-session-token",
+    ],
+  })
+);
 
-// // Handle preflight cleanly
-// app.options("*", cors());
+// Handle preflight cleanly
+app.options("*", cors());
 
-const corsOptions = {
-  origin: (origin, callback) => {
-    // !origin allows tools like Postman/cURL
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('CORS Policy: Origin not allowed'));
-    }
-  },
-  credentials: true, // Required for cookies/sessions
-  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization", "x-session-token"],
-  optionsSuccessStatus: 204, // Some legacy browsers choke on 204
-};
-
-// Apply once. This handles BOTH standard requests and OPTIONS preflights.
-app.use(cors(corsOptions));
 
 // Create HTTP server & Socket.IO server
 const server = http.createServer(app);
@@ -168,29 +151,29 @@ app.use(compression());
 
 
 
-// app.use((req, res, next) => {
-//   const origin = req.headers.origin;
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
 
-//   if (allowedOrigins.includes(origin)) {
-//     res.setHeader("Access-Control-Allow-Origin", origin);
-//   }
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
+  }
 
-//   res.setHeader("Access-Control-Allow-Credentials", "true");
-//   res.setHeader(
-//     "Access-Control-Allow-Methods",
-//     "GET,POST,PUT,DELETE,PATCH,OPTIONS"
-//   );
-//   res.setHeader(
-//     "Access-Control-Allow-Headers",
-//     "Content-Type, Authorization, X-Requested-With, Accept, Origin, x-session-token"
-//   );
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET,POST,PUT,DELETE,PATCH,OPTIONS"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Content-Type, Authorization, X-Requested-With, Accept, Origin, x-session-token"
+  );
 
-//   if (req.method === "OPTIONS") {
-//     return res.sendStatus(204);
-//   }
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(204);
+  }
 
-//   next();
-// });
+  next();
+});
 
 
 // Core Middleware
