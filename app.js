@@ -204,27 +204,28 @@ app.use(fileUpload({
   preserveExtension: 4,
 }));
 
-app.set("trust proxy", 1); 
-// Session with MongoDB store
+app.set("trust proxy", 1);
+
 app.use(
   session({
+    name: "connect.sid",
     secret: process.env.JWT_SECRET_KEY,
     resave: false,
     saveUninitialized: false,
+    proxy: true,
     store: MongoStore.create({
       mongoUrl: process.env.DB_URL,
       dbName: process.env.DATABASE,
       touchAfter: 24 * 3600,
     }),
     cookie: {
-      secure: process.env.NODE_ENV === "production", // true only in prod
+      secure: process.env.NODE_ENV === "production",
       httpOnly: true,
-      // sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+      sameSite: "lax",
       maxAge: 10 * 60 * 1000,
-
-      // ✅ domain ONLY in production
       ...(process.env.NODE_ENV === "production" && {
-        domain: ".bookmyworkers.com/app",
+        domain: ".bookmyworkers.com",
+        path: "/",
       }),
     },
   })
