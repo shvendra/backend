@@ -224,7 +224,7 @@ app.use(
 
       // ✅ domain ONLY in production
       ...(process.env.NODE_ENV === "production" && {
-        domain: ".bookmyworkers.com",
+        domain: ".bookmyworkers.com/app",
       }),
     },
   })
