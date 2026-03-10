@@ -28,15 +28,24 @@ function generateCaptchaImage(text) {
 }
 
 export const getCaptcha = (req, res) => {
-  const captchaText = generateCaptchaText();
-  const captchaImage = generateCaptchaImage(captchaText);
+  const captchaText = generateCaptchaText(); // your existing function
+
   req.session.captcha = captchaText;
+
   req.session.save((err) => {
+    console.log("GENERATE sessionID:", req.sessionID);
+    console.log("GENERATE captcha:", captchaText);
+    console.log("GENERATE cookie header:", req.headers.cookie);
+
     if (err) {
-      console.error("Failed to save session:", err);
-      return res.status(500).json({ error: "Failed to generate CAPTCHA" });
+      console.error("Save captcha session error:", err);
+      return res.status(500).json({ message: "Failed to save captcha session" });
     }
-    res.json({ image: captchaImage });
+
+    return res.status(200).json({
+      success: true,
+      captchaImage: generateCaptchaImage(captchaText), // your response
+    });
   });
 };
 
