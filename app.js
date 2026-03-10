@@ -204,6 +204,7 @@ app.use(fileUpload({
   preserveExtension: 4,
 }));
 
+
 app.set("trust proxy", 1);
 
 app.use(
@@ -219,14 +220,12 @@ app.use(
       touchAfter: 24 * 3600,
     }),
     cookie: {
-      secure: process.env.NODE_ENV === "production",
+      secure: true,
       httpOnly: true,
       sameSite: "lax",
       maxAge: 10 * 60 * 1000,
-      ...(process.env.NODE_ENV === "production" && {
-        domain: ".bookmyworkers.com",
-        path: "/",
-      }),
+      domain: ".bookmyworkers.com",
+      path: "/",
     },
   })
 );
