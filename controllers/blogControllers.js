@@ -59,19 +59,72 @@ export const updateBlog = async (req, res) => {
 
 export const getAllBlogs = async (req, res) => {
   try {
-    const blogs = await Blog.find().sort({ createdAt: -1 });
-    res.status(200).json({ blogs });
+    const { page, limit } = req.query;
+
+    // Old flow: if page/limit not provided, return all blogs
+    if (!page && !limit) {
+      const blogs = await Blog.find().sort({ createdAt: -1 });
+      return res.status(200).json({ blogs });
+    }
+
+    const currentPage = Math.max(parseInt(page, 10) || 1, 1);
+    const perPage = Math.max(parseInt(limit, 10) || 10, 1);
+    const skip = (currentPage - 1) * perPage;
+
+    const [blogs, totalBlogs] = await Promise.all([
+      Blog.find().sort({ createdAt: -1 }).skip(skip).limit(perPage),
+      Blog.countDocuments(),
+    ]);
+
+    return res.status(200).json({
+      blogs,
+      pagination: {
+        totalBlogs,
+        currentPage,
+        perPage,
+        totalPages: Math.ceil(totalBlogs / perPage),
+        hasNextPage: currentPage < Math.ceil(totalBlogs / perPage),
+        hasPrevPage: currentPage > 1,
+      },
+    });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    return res.status(500).json({ message: error.message });
   }
 };
 
 export const getAllPublishedBlogs = async (req, res) => {
   try {
-    const blogs = await Blog.find({ isPublished: true }).sort({ createdAt: -1 });
-    res.status(200).json({ blogs });
+    const { page, limit } = req.query;
+    const filter = { isPublished: true };
+
+    // Old flow: if page/limit not provided, return all published blogs
+    if (!page && !limit) {
+      const blogs = await Blog.find(filter).sort({ createdAt: -1 });
+      return res.status(200).json({ blogs });
+    }
+
+    const currentPage = Math.max(parseInt(page, 10) || 1, 1);
+    const perPage = Math.max(parseInt(limit, 10) || 10, 1);
+    const skip = (currentPage - 1) * perPage;
+
+    const [blogs, totalBlogs] = await Promise.all([
+      Blog.find(filter).sort({ createdAt: -1 }).skip(skip).limit(perPage),
+      Blog.countDocuments(filter),
+    ]);
+
+    return res.status(200).json({
+      blogs,
+      pagination: {
+        totalBlogs,
+        currentPage,
+        perPage,
+        totalPages: Math.ceil(totalBlogs / perPage),
+        hasNextPage: currentPage < Math.ceil(totalBlogs / perPage),
+        hasPrevPage: currentPage > 1,
+      },
+    });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    return res.status(500).json({ message: error.message });
   }
 };
 
