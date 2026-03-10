@@ -41,21 +41,36 @@ export const getCaptcha = (req, res) => {
 };
 
 export const verifyCaptcha = (req, res) => {
+  console.log("VERIFY sessionID:", req.sessionID);
+  console.log("VERIFY stored captcha:", req.session?.captcha);
+  console.log("VERIFY entered captcha:", req.body?.captcha);
+
   const { captcha } = req.body;
+
   if (!captcha) {
     return res.status(400).json({ message: "CAPTCHA is required" });
   }
-  if (!req.session.captcha || req.session.captcha.toLowerCase() !== captcha.toLowerCase()) {
-    return res.status(400).json({ message: "Invalid CAPTCHA" });
+
+  if (
+    !req.session.captcha ||
+    req.session.captcha.toLowerCase() !== captcha.toLowerCase()
+  ) {
+    return res.status(400).json({
+      message: "Invalid CAPTCHA",
+      stored: req.session?.captcha || null,
+      entered: captcha || null,
+    });
   }
 
-  // ✅ Mark captcha as verified and clear it
   req.session.captchaVerified = true;
-  req.session.save(err => {
+  req.session.save((err) => {
     if (err) {
       return res.status(500).json({ message: "Failed to save session" });
     }
-    return res.status(200).json({ success: true, message: "CAPTCHA verified successfully" });
+    return res.status(200).json({
+      success: true,
+      message: "CAPTCHA verified successfully",
+    });
   });
 };
 
