@@ -712,101 +712,143 @@ export const getAgents = async (req, res) => {
       workerGroup,
     } = req.query;
 
-    const skip = (Number(page) - 1) * Number(limit);
+    const pageNumber = Number(page) || 1;
+    const limitNumber = Number(limit) || 25;
 
-    let filter = {};
-    filter.role = { $in: ["Agent", "SelfWorker", "Worker"] };
+    let filter = {
+      role: { $in: ["Agent", "SelfWorker", "Worker"] },
+      status: { $in: ["Verified", "Unverified"] },
+    };
+
     if (workerGroup === "group") {
-      filter.role = "Agent"; // Only agents
-         filter.role = { $in: ["Agent"] };
-    } 
-      filter.status = { $in: ["Verified", "Unverified"] };
+      filter.role = { $in: ["Agent"] };
+    } else if (workerGroup === "individual") {
+      filter.role = { $in: ["SelfWorker", "Worker"] };
+    }
+
     if (status) {
       filter.status = {
         $in: Array.isArray(status) ? status : [status],
       };
     }
-      if (state && state !== "All") filter.state = state;
-      if (city) filter.$or = [{ district: city }, { serviceArea: { $in: [city] } }];
-      if (block) filter.block = block;
-      if (gender) filter.gender = gender;
 
-      // Age filter
-      if (minAge || maxAge) {
-        const currentYear = new Date().getFullYear();
-        const minDOB = maxAge ? currentYear - maxAge : null;
-        const maxDOB = minAge ? currentYear - minAge : null;
-        filter.dob = {};
-        if (minDOB) filter.dob.$lte = minDOB;
-        if (maxDOB) filter.dob.$gte = maxDOB;
-        if (Object.keys(filter.dob).length === 0) delete filter.dob;
+    if (state && state !== "All") {
+      filter.state = state;
+    }
+
+    if (city) {
+      filter.$or = [
+        { district: city },
+        { serviceArea: { $in: [city] } },
+      ];
+    }
+
+    if (block) {
+      filter.block = block;
+    }
+
+    if (gender) {
+      filter.gender = gender;
+    }
+
+    // Age filter
+    if (minAge || maxAge) {
+      const currentYear = new Date().getFullYear();
+      const minDOB = maxAge ? currentYear - Number(maxAge) : null;
+      const maxDOB = minAge ? currentYear - Number(minAge) : null;
+
+      filter.dob = {};
+      if (minDOB !== null) filter.dob.$lte = minDOB;
+      if (maxDOB !== null) filter.dob.$gte = maxDOB;
+
+      if (!Object.keys(filter.dob).length) {
+        delete filter.dob;
       }
-    // Determine workerType filter based on categories
+    }
+
+    // workerType expansion
     let allTypes = [];
     if (workerType) {
+      const normalizedWorkerType = String(workerType).trim().toLowerCase();
+
       const mainCategory = categories.find(
-        (cat) => cat.value.toLowerCase() === workerType.toLowerCase()
+        (cat) =>
+          String(cat.value).trim().toLowerCase() === normalizedWorkerType ||
+          String(cat.label).trim().toLowerCase() === normalizedWorkerType
       );
 
       if (mainCategory) {
-        // Main category: include subcategories + main
         allTypes = [
           mainCategory.value,
-          ...mainCategory.subcategories.map((sub) => sub.value),
+          ...(mainCategory.subcategories || []).map((sub) => sub.value),
         ];
       } else {
-        // Subcategory only
         allTypes = [workerType];
       }
+
+      allTypes = allTypes.map((v) => String(v).trim().toLowerCase());
     }
 
-    // Fetch documents from DB
+    // First fetch all docs matching base filters
     let agents = await User.find(filter)
-      .select("_id name district block profilePhoto status state serviceArea areasOfWork dob veryfiedBage role gender fixedSalary salaryFrom salaryTo workExperience")
-      .sort({ createdAt: -1 })
-      .skip(skip)
-      .limit(Number(limit));
+      .select(
+        "_id name district block profilePhoto status state serviceArea areasOfWork dob veryfiedBage role gender fixedSalary salaryFrom salaryTo workExperience"
+      )
+      .sort({ createdAt: -1 });
 
-    // Filter by areasOfWork / role in Node.js
+    // Then apply workerType filter in Node
     if (allTypes.length) {
       agents = agents.filter((agent) => {
-        // Check role match
-        if (allTypes.includes(agent.role)) return true;
+        // role check optional, mostly unnecessary unless role names are used as worker types
+        const normalizedRole = String(agent.role || "").trim().toLowerCase();
+        if (allTypes.includes(normalizedRole)) return true;
 
-        // Check areasOfWork match
-        if (!agent.areasOfWork) return false;
-
-        for (let aw of agent.areasOfWork) {
-          let parsed = [];
-          try {
-            parsed = JSON.parse(aw); // handle stringified arrays
-          } catch (e) {
-            parsed = [aw]; // not stringified
-          }
-
-          if (parsed.some((v) => allTypes.includes(v))) return true;
+        if (!agent.areasOfWork || !Array.isArray(agent.areasOfWork)) {
+          return false;
         }
 
-        return false;
+        let normalizedAreas = [];
+
+        for (const aw of agent.areasOfWork) {
+          try {
+            const parsed = JSON.parse(aw);
+
+            if (Array.isArray(parsed)) {
+              normalizedAreas.push(
+                ...parsed.map((v) => String(v).trim().toLowerCase())
+              );
+            } else {
+              normalizedAreas.push(String(parsed).trim().toLowerCase());
+            }
+          } catch (e) {
+            normalizedAreas.push(String(aw).trim().toLowerCase());
+          }
+        }
+
+        return normalizedAreas.some((v) => allTypes.includes(v));
       });
     }
 
-    // Total count (before pagination in JS filter)
-    const totalCount = await User.countDocuments(filter);
+    // Total after actual filtering
+    const totalCount = agents.length;
 
-    res.status(200).json({
+    // Pagination after actual filtering
+    const skip = (pageNumber - 1) * limitNumber;
+    const paginatedAgents = agents.slice(skip, skip + limitNumber);
+
+    return res.status(200).json({
       success: true,
-      agents,
+      agents: paginatedAgents,
       pagination: {
-        page: Number(page),
-        limit: Number(limit),
+        page: pageNumber,
+        limit: limitNumber,
         total: totalCount,
-        hasMore: skip + agents.length < totalCount,
+        hasMore: skip + paginatedAgents.length < totalCount,
       },
     });
   } catch (error) {
     console.error("❌ Error fetching agents:", error);
-    res.status(500).json({
+    return res.status(500).json({
       success: false,
       message: "Failed to fetch agents",
     });
