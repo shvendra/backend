@@ -11,7 +11,7 @@ router.post("/login", login);
 router.get("/logout", isAuthenticated, logout);
 router.get("/getuser", isAuthenticated, getUser);
 router.put("/update", isAuthenticated, updateUser);
-router.get("/getAllAgents", isAuthenticated, getAgents);
+router.get("/getAllAgents", getAgents);
 router.get("/getAllAgentsAdmin", isAuthenticated, getAllAgentsAdmin);
 router.get("/leads", isAuthenticated, authorizeAdminOrSuperAdmin, getAllLeads);
 router.put("/update/password", updatePassword);
