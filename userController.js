@@ -31,19 +31,19 @@ const PLAN_CONFIG = {
   "1m": {
     subscriptionType: "Monthly",
     durationMonths: 1,
-    remainingContacts: 50,
+    remainingContacts: 100,
     remainingPosts: 25,
   },
   "6m": {
     subscriptionType: "Half-Yearly",
     durationMonths: 6,
-    remainingContacts: 300,
+    remainingContacts: 800,
     remainingPosts: 50,
   },
   "12m": {
     subscriptionType: "Yearly",
     durationMonths: 12,
-    remainingContacts: 600,
+    remainingContacts: 1600,
     remainingPosts: 75,
   },
 };
