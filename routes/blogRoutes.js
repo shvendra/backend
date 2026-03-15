@@ -14,6 +14,7 @@ import {
   likeBlog,
 } from "../controllers/blogControllers.js";
 import uploadBlogPhoto from "../middlewares/uploadBlogPhoto.js";
+import uploadToS3 from "../utils/s3.js";
 
 const router = express.Router();
 
@@ -25,32 +26,35 @@ const __dirname = path.dirname(__filename);
 router.post(
   "/save",
   isAuthenticated,
-  (req, res, next) => {
-    console.log("[UPLOAD] Request body:", req.body);
+  async (req, res, next) => {
+    try {
+      console.log("[UPLOAD] Request body:", req.body);
 
-    if (!req.files || !req.files.photo) {
-      console.error("[UPLOAD] No file found in request");
-      return res.status(400).json({ error: "No file uploaded" });
-    }
-
-    const file = req.files.photo;
-    const blogDir = "/var/www/uploads/blog_photos";
-
-    if (!fs.existsSync(blogDir)) {
-      console.log("[UPLOAD] blog_photos folder missing. Creating...");
-      fs.mkdirSync(blogDir, { recursive: true });
-    }
-
-    const uploadPath = path.join(blogDir, file.name);
-
-    file.mv(uploadPath, (err) => {
-      if (err) {
-        console.error("[UPLOAD] File move failed:", err);
-        return res.status(500).json({ error: "File upload failed" });
+      if (!req.files || !req.files.photo) {
+        console.error("[UPLOAD] No file found in request");
+        return res.status(400).json({ error: "No file uploaded" });
       }
-      console.log("[UPLOAD] File saved to:", uploadPath);
-      next(); // ✅ call next to trigger createBlog
-    });
+
+      const file = req.files.photo;
+
+      const fileExtension =
+        file.name?.split(".").pop() ||
+        file.mimetype?.split("/").pop() ||
+        "jpg";
+
+      const fileName = `${Date.now()}_${file.name.replace(/\s+/g, "_")}`;
+      const key = `blog_photos/${fileName}`;
+
+      await uploadToS3(file.data, key, file.mimetype);
+
+      req.body.photo = key; // save S3 key in DB
+      console.log("[UPLOAD] File uploaded to S3:", key);
+
+      next();
+    } catch (err) {
+      console.error("[UPLOAD] S3 upload failed:", err);
+      return res.status(500).json({ error: "File upload failed" });
+    }
   },
   createBlog
 );
@@ -58,32 +62,35 @@ router.post(
 router.post(
   "/update/:id",
   isAuthenticated,
-  (req, res, next) => {
-    console.log("[UPDATE] Request body:", req.body);
+  async (req, res, next) => {
+    try {
+      console.log("[UPDATE] Request body:", req.body);
 
-    if (!req.files || !req.files.photo) {
-      console.log("[UPDATE] No new file uploaded, skipping file save...");
-      return next(); // ✅ Allow update without file upload
-    }
-
-    const file = req.files.photo;
-    const blogDir = "/var/www/uploads/blog_photos";
-
-    if (!fs.existsSync(blogDir)) {
-      console.log("[UPDATE] blog_photos folder missing. Creating...");
-      fs.mkdirSync(blogDir, { recursive: true });
-    }
-
-    const uploadPath = path.join(blogDir, file.name);
-
-    file.mv(uploadPath, (err) => {
-      if (err) {
-        console.error("[UPDATE] File move failed:", err);
-        return res.status(500).json({ error: "File upload failed" });
+      if (!req.files || !req.files.photo) {
+        console.log("[UPDATE] No new file uploaded, skipping S3 upload...");
+        return next();
       }
-      console.log("[UPDATE] File saved to:", uploadPath);
-      next(); // ✅ Call next to trigger updateBlog
-    });
+
+      const file = req.files.photo;
+      const blogId = req.params.id;
+
+      const fileExtension =
+        file.name?.split(".").pop() ||
+        file.mimetype?.split("/").pop() ||
+        "jpg";
+
+      const key = `blog_photos/${blogId}_${Date.now()}.${fileExtension}`;
+
+      await uploadToS3(file.data, key, file.mimetype);
+
+      req.body.photo = key; // save updated S3 key in DB
+      console.log("[UPDATE] File uploaded to S3:", key);
+
+      next();
+    } catch (err) {
+      console.error("[UPDATE] S3 upload failed:", err);
+      return res.status(500).json({ error: "File upload failed" });
+    }
   },
   updateBlog
 );
