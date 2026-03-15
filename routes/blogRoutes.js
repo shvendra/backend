@@ -22,7 +22,6 @@ import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
 router.post(
   "/save",
   isAuthenticated,
@@ -37,17 +36,13 @@ router.post(
 
       const file = req.files.photo;
 
-      const fileExtension =
-        file.name?.split(".").pop() ||
-        file.mimetype?.split("/").pop() ||
-        "jpg";
-
-      const fileName = `${Date.now()}_${file.name.replace(/\s+/g, "_")}`;
+      const fileName = file.name.replace(/\s+/g, "_"); // keep original name
       const key = `blog_photos/${fileName}`;
 
       await uploadToS3(file.data, key, file.mimetype);
 
-      req.body.photo = key; // save S3 key in DB
+      req.body.photo = key;
+
       console.log("[UPLOAD] File uploaded to S3:", key);
 
       next();
@@ -72,18 +67,14 @@ router.post(
       }
 
       const file = req.files.photo;
-      const blogId = req.params.id;
 
-      const fileExtension =
-        file.name?.split(".").pop() ||
-        file.mimetype?.split("/").pop() ||
-        "jpg";
-
-      const key = `blog_photos/${blogId}_${Date.now()}.${fileExtension}`;
+      const fileName = file.name.replace(/\s+/g, "_");
+      const key = `blog_photos/${fileName}`;
 
       await uploadToS3(file.data, key, file.mimetype);
 
-      req.body.photo = key; // save updated S3 key in DB
+      req.body.photo = key;
+
       console.log("[UPDATE] File uploaded to S3:", key);
 
       next();
