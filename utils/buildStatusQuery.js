@@ -1,10 +1,10 @@
 export const buildStatusQuery = (statusMode, status) => {
   if (statusMode === "active") {
-    return { status: { $in: ["assigned", "Approved"] } };
+    return { status: { $in: ["Assigned", "Approved"] } };
   }
 
   if (statusMode === "inactive") {
-    return { status: { $nin: ["assigned", "Approved", "Closed", "Expired"] } };
+    return { status: { $nin: ["Assigned", "Approved", "Closed", "Expired"] } };
   }
 
   if (status) {
