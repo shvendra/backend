@@ -915,36 +915,23 @@ const capitalizedCity = city.charAt(0).toUpperCase() + city.slice(1).toLowerCase
 };
 
 
+
 export const leadRegister = async (req, res) => {
   const { role, name, phone } = req.body;
 
-  if (!role || !name || !phone) {
-    return res
-      .status(400)
-      .json({ success: false, message: "All fields are required" });
-  }
-
   try {
-    const existingLead = await Lead.findOne({ phone });
-    if (existingLead) {
-      return res.status(409).json({
-        success: false,
-        message: "Lead with this phone already exists",
-      });
+    if (role && name && phone) {
+      await Lead.updateOne(
+        { phone },
+        { $setOnInsert: { role, name, phone } },
+        { upsert: true }
+      );
     }
-
-    const newLead = new Lead({ role, name, phone });
-    await newLead.save();
-
-    res.status(201).json({
-      success: true,
-      message: "Lead registered successfully",
-      data: newLead,
-    });
   } catch (error) {
     console.error("Error registering lead:", error);
-    res.status(500).json({ success: false, message: "Server error" });
   }
+
+  return res.status(200).json({ success: true });
 };
 
 export const getAllLeads = async (req, res) => {
