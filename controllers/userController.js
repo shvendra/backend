@@ -737,9 +737,10 @@ export const getAgents = async (req, res) => {
     }
 
     if (city) {
+const capitalizedCity = city.charAt(0).toUpperCase() + city.slice(1).toLowerCase();
       filter.$or = [
-        { district: city },
-        { serviceArea: { $in: [city] } },
+        { district: capitalizedCity },
+        { serviceArea: { $in: [capitalizedCity] } },
       ];
     }
 
@@ -882,9 +883,10 @@ export const getAllAgentsAdmin = async (req, res) => {
       }
 
       if (city && city !== "All") {
+const capitalizedCity = city.charAt(0).toUpperCase() + city.slice(1).toLowerCase();
         filter.$or = [
-          { district: city },
-          { serviceArea: { $in: [city] } },
+          { district: capitalizedCity },
+          { serviceArea: { $in: [capitalizedCity] } },
         ];
       }
 
