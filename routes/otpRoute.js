@@ -341,7 +341,11 @@ router.post("/verify-otp", async (req, res) => {
   // ✅ Fetch OTP from DB
   const stored = await OTP.findOne({ phone }).sort({ createdAt: -1 });
   if (!stored) return res.status(400).json({ message: "No OTP found or expired" });
-
+console.log("Stored OTP:", stored.otp);
+console.log("Stored expiresAt:", stored.expiresAt);
+console.log("Stored expiresAt ms:", stored.expiresAt?.getTime?.());
+console.log("Current Date:", new Date());
+console.log("Current ms:", Date.now());
   if (Date.now() > stored.expiresAt.getTime()) {
     await OTP.deleteOne({ _id: stored._id });
     return res.status(400).json({ message: "OTP has expired" });
