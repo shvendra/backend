@@ -186,6 +186,7 @@ router.post("/send-otp-admin", async (req, res) => {
     if (!existingUser && role !== "register") {
       return res.status(400).json({ success: false, message: "Phone number not registered with this role!" });
     }
+    await OTP.deleteMany({ phone });
 
     // --- Store OTP in MongoDB instead of in-memory ---
     await OTP.findOneAndUpdate(
