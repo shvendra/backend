@@ -14,6 +14,7 @@ import rateLimit from "express-rate-limit";
 import compression from "compression";
 import mongoSanitize from "mongo-sanitize";
 import hpp from "hpp";
+import mongoose from "mongoose";
 
 // Routes
 import dbConnection from "./database/dbConnection.js";
@@ -84,7 +85,15 @@ app.use(
 );
 
 // Handle preflight cleanly
-app.options("*", cors());
+app.options(
+  "*",
+  cors({
+    origin: allowedOrigins,
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization", "x-session-token"],
+  })
+);
 
 
 // Create HTTP server & Socket.IO server
@@ -269,11 +278,41 @@ app.use("/api/v1/session", sessionRoute);
 
 // ✅ LEGACY HEALTH CHECK (kept for backward compatibility)
 app.get("/api/v1/health", (req, res) => {
-  res.status(200).json({
-    status: "success",
-    message: "API is healthy",
-    timestamp: new Date(),
-  });
+  try {
+    const dbState = mongoose.connection.readyState;
+
+    const dbStatusMap = {
+      0: "disconnected",
+      1: "connected",
+      2: "connecting",
+      3: "disconnecting",
+    };
+
+    const isHealthy = dbState === 1;
+
+    const response = {
+      status: isHealthy ? "success" : "error",
+      message: isHealthy ? "Server is healthy" : "Database not connected",
+      timestamp: new Date(),
+      uptime: `${Math.floor(process.uptime())}s`,
+      db: dbStatusMap[dbState],
+      memory: `${Math.round(process.memoryUsage().heapUsed / 1024 / 1024)} MB`,
+    };
+
+    // ❌ If DB not connected → mark unhealthy
+    if (!isHealthy) {
+      return res.status(500).json(response);
+    }
+
+    return res.status(200).json(response);
+
+  } catch (error) {
+    return res.status(500).json({
+      status: "error",
+      message: "Health check failed",
+      error: error.message,
+    });
+  }
 });
 
 dbConnection();
