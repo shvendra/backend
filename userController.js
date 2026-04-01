@@ -145,10 +145,6 @@ if (user?.email) {
     subject: "Welcome to BookMyWorker – Registration Successful",
     message: `
       <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 20px;">
-        <div style="text-align: center;">
-          <img src="https://bookmyworkers.com/hero-3.jpg" alt="Image" style="width: 100%; max-width: 100%; height: auto; border-radius: 6px;" />
-        </div>
-
         <h2 style="color: #0a5c59;">Welcome ${user?.name?.split(" ")[0] || "User"},</h2>
 
         <p>Your registration with <strong>BookMyWorkers</strong> has been successfully completed.</p>

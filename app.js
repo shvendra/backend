@@ -441,21 +441,7 @@ app.use(
   express.static(path.join(__dirname, "dist"))
 );
 
-/* CRM at /app */
-app.use(
-  "/app",
-  express.static(path.join(__dirname, "dist-crm"))
-);
 
-/* React fallback for CRM */
-app.get("/app/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "dist-crm", "index.html"));
-});
-
-/* React fallback for website */
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "dist-web", "index.html"));
-});
 // SPA fallback route (should be last)
 app.get('*', (req, res) => {
   // Avoid intercepting API or socket routes
