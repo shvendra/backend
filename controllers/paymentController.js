@@ -332,10 +332,9 @@ export async function getTransactionsByEmployer(req, res) {
     // Fetch all transactions associated with a specific employerId (both credit and debit)
 const transactions = await Payment.find({
   employerId,
-  creditStatus: "COMPLETED",
-  paymentType: { $ne: "subscription" },
+  creditStatus: { $in: ["COMPLETED", "Done"] },
+  // paymentType: { $ne: "subscription" },
 }).sort({ createdAt: -1 });
-
     if (!transactions || transactions.length === 0) {
       return res
         .status(404)
