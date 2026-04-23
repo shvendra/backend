@@ -456,7 +456,82 @@ console.log(updatedUser);
     return null; // Handle gracefully
   }
 };
+export const updateEmployerAgentPaymentVerifiedBadgeStatus = async (req, res) => {
+  console.log("API HIT");
 
+  try {
+    const { _id, type, planKey, startDate } = req.body;
+
+    console.log("BODY:", req.body); // ✅ debug
+
+    // ❌ Validation
+    if (!_id) {
+      return res.status(400).json({
+        success: false,
+        message: "_id is required",
+      });
+    }
+
+    const updateData = {};
+
+    // ✅ VERIFIED BADGE
+    if (type === "badge") {
+      updateData.veryfiedBage = true;
+      updateData.badgeActivatedAt = new Date();
+    }
+
+    // ✅ SUBSCRIPTION
+    if (type === "subscription") {
+      if (!PLAN_CONFIG[planKey]) {
+        return res.status(400).json({
+          success: false,
+          message: "Invalid plan selected",
+        });
+      }
+
+      const plan = PLAN_CONFIG[planKey];
+      const start = startDate ? new Date(startDate) : new Date();
+
+      const expiry = new Date(start);
+      expiry.setMonth(expiry.getMonth() + plan.durationMonths);
+
+      updateData.isSubscribed = true;
+      updateData.subscriptionType = plan.subscriptionType;
+      updateData.subscriptionStartDate = start;
+      updateData.subscriptionExpiryDate = expiry;
+      updateData.remainingContacts = plan.remainingContacts;
+      updateData.remainingPosts = plan.remainingPosts;
+      updateData.lastSubscriptionDate = new Date();
+    }
+
+    const updatedUser = await User.findByIdAndUpdate(
+      _id,
+      { $set: updateData },
+      { new: true }
+    );
+
+    if (!updatedUser) {
+      return res.status(404).json({
+        success: false,
+        message: "No user found with this ID",
+      });
+    }
+
+    return res.status(200).json({
+      success: true,
+      message: "Payment status updated successfully",
+      data: updatedUser,
+    });
+
+  } catch (error) {
+    console.error("Update Error:", error);
+
+    return res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
 export const setRole = catchAsyncErrors(async (req, res, next) => {
   const { role, phone } = req.body;
 
