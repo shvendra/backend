@@ -72,6 +72,9 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: "Unverified",
     },
+    transactionId: {
+      type: String,
+    },
     veryfiedBage: {
       type: Boolean,
       default: false,

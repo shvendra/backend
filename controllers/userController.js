@@ -460,7 +460,7 @@ export const updateEmployerAgentPaymentVerifiedBadgeStatus = async (req, res) =>
   console.log("API HIT");
 
   try {
-    const { _id, type, planKey, startDate } = req.body;
+    const { _id, type, planKey, startDate, transactionId } = req.body;
 
     console.log("BODY:", req.body); // ✅ debug
 
@@ -494,7 +494,7 @@ export const updateEmployerAgentPaymentVerifiedBadgeStatus = async (req, res) =>
 
       const expiry = new Date(start);
       expiry.setMonth(expiry.getMonth() + plan.durationMonths);
-
+      updateData.transactionId = transactionId;
       updateData.isSubscribed = true;
       updateData.subscriptionType = plan.subscriptionType;
       updateData.subscriptionStartDate = start;
