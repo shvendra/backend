@@ -257,7 +257,7 @@ app.use("/blog_photos", express.static(path.join("/var/www/uploads/blog_photos")
 
 // ✅ PRODUCTION-OPTIMIZED ROUTES WITH CACHING
 app.use("/api/v1/admin", adminRouter);
-app.use("/api/v1/user", userRouter); // Cache user data for 5min
+app.use("/api/v1/user", cache(300), userRouter); // Cache user data for 5min
 app.use("/api/v1/users", adminRouter); // Admin routes - no cache
 app.use("/api/v1/job", cache(600), jobRouter); // Cache jobs for 10min
 app.use("/api/v1/application", applicationRouter); // No cache for applications

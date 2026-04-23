@@ -23,7 +23,8 @@ router.post(
   isAuthenticated, // ✅ MUST BE FIRST
   authorizeAdminOrSuperAdmin,
   updateEmployerAgentPaymentVerifiedBadgeStatus
-);router.get("/referred", isAuthenticated, getUsersByReferredBy);
+);
+router.get("/referred", isAuthenticated, getUsersByReferredBy);
 router.get(
   "/unlock-number/:agentId",
   isAuthenticated,
