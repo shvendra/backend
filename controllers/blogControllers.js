@@ -1,29 +1,70 @@
 import { Blog } from "../models/blogSchema.js";
+import uploadToS3 from "../utils/s3.js";
 
 export const createBlog = async (req, res) => {
   try {
     const { title, subtitle, body, link } = req.body;
-    if (!title || !subtitle || !body || !link)
-      return res.status(400).json({ message: "All fields are required" });
 
-    if (!req.files)
-      return res.status(400).json({ message: "Photo is required" });
+    // ✅ Validate fields
+    if (!title || !subtitle || !body || !link) {
+      return res.status(400).json({
+        success: false,
+        message: "All fields are required",
+      });
+    }
 
-    const photoUrl = `/blog_photos/${req.files.photo.name}`;
+    // ✅ Validate file
+    if (!req.files || !req.files.photo) {
+      return res.status(400).json({
+        success: false,
+        message: "Photo is required",
+      });
+    }
 
+    const file = req.files.photo;
+
+    // ✅ Clean filename (important)
+    const cleanName = file.name.replace(/\s+/g, "_");
+
+    const key = `blog_photos/${Date.now()}_${cleanName}`;
+
+    // ✅ Upload to S3
+    const result = await uploadToS3(
+      file.data,
+      key,
+      file.mimetype
+    );
+
+    // 🔥 IMPORTANT FIX HERE
+    const photoUrl = result.Location; // ✅ MUST BE STRING
+
+    // Debug (optional)
+    console.log("S3 Upload Result:", result);
+    console.log("Photo URL:", photoUrl);
+
+    // ✅ Save to DB
     const blog = await Blog.create({
       title,
       subtitle,
       body,
       link,
-      photo: photoUrl,
-      author: req.user?._id || null,
+      photo: photoUrl, // ✅ string
       isPublished: true,
     });
 
-    res.status(201).json({ message: "Blog created successfully", blog });
+    return res.status(201).json({
+      success: true,
+      message: "Blog created successfully",
+      blog,
+    });
+
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    console.error("CREATE BLOG ERROR:", error);
+
+    return res.status(500).json({
+      success: false,
+      message: error.message || "Internal Server Error",
+    });
   }
 };
 
@@ -131,7 +172,8 @@ export const getAllPublishedBlogs = async (req, res) => {
 
 export const getSingleBlog = async (req, res) => {
   try {
-    const blog = await Blog.findById(req.params.id);
+    console.log(req.params);
+const blog = await Blog.findOneByLink(req.params.link);
     if (!blog) return res.status(404).json({ message: "Blog not found" });
     res.status(200).json({ blog });
   } catch (error) {

@@ -268,7 +268,7 @@ app.use("/api/v1/payment", paymentRoute); // No cache for payments
 app.use('/api/email', emailRoutes); // No cache for emails
 app.use('/api/view', cache(1800), userStats); // Cache stats for 30min
 app.use("/api/user-comments", userCommentsRouter); // No cache for comments
-app.use("/api/v1/blogs", cache(600), blogRouter); // ✅ CACHED BLOG ROUTE (10min)
+app.use("/api/v1/blogs", blogRouter);
 app.use("/api/v1/blogs-comment", blogCommentRoutes);
 
 // ✅ PRODUCTION MONITORING ROUTES
