@@ -809,10 +809,10 @@ export const getAgents = async (req, res) => {
     }
 
     if (city) {
-const capitalizedCity = city.charAt(0).toUpperCase() + city.slice(1).toLowerCase();
+// const capitalizedCity = city.charAt(0).toUpperCase() + city.slice(1).toLowerCase();
       filter.$or = [
-        { district: capitalizedCity },
-        { serviceArea: { $in: [capitalizedCity] } },
+        { district: city },
+        { serviceArea: { $in: [city] } },
       ];
     }
 
@@ -904,7 +904,7 @@ const capitalizedCity = city.charAt(0).toUpperCase() + city.slice(1).toLowerCase
 
     // Total after actual filtering
     const totalCount = agents.length;
-
+console.log(agents);
     // Pagination after actual filtering
     const skip = (pageNumber - 1) * limitNumber;
     const paginatedAgents = agents.slice(skip, skip + limitNumber);
