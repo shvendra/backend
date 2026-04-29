@@ -148,6 +148,101 @@ router.post("/send-otp", verifySession, async (req, res) => {
   }
 });
 
+// New endpoint for user-facing OTP login/registration
+router.post("/send-otp-user", async (req, res) => {
+  try {
+    const { phone, firstName = "User", lastName = "", role } = req.body;
+    
+    if (!phone) {
+      return res.status(400).json({ message: "Phone number is required" });
+    }
+
+    const now = Date.now();
+
+    // --- Daily OTP limit check (Anti-Spam) ---
+    // Critical to prevent API abuse since CAPTCHA is removed
+    let dailyLog = dailyOtpTracker.get(phone);
+    const oneDayMs = 24 * 60 * 60 * 1000;
+    const maxDailyOtps = 5; 
+
+    if (!dailyLog || now - dailyLog.firstRequestTime > oneDayMs) {
+      dailyLog = { count: 1, firstRequestTime: now };
+      dailyOtpTracker.set(phone, dailyLog);
+    } else if (dailyLog.count >= maxDailyOtps) {
+      const resetTime = new Date(dailyLog.firstRequestTime + oneDayMs);
+      const waitTime = Math.ceil((resetTime - now) / 1000);
+      return res.status(429).json({
+        message: `Daily limit reached. Try again in ${waitTime}s.`,
+      });
+    } else {
+      dailyLog.count += 1;
+      dailyOtpTracker.set(phone, dailyLog);
+    }
+
+    // --- Generate 6-digit OTP ---
+    const otp = Math.floor(100000 + Math.random() * 900000);
+    const message = `Your BookMyWorker OTP is ${otp}`;
+
+    // --- User Validation ---
+    // If logging in, check if user exists. If registering, we allow it.
+    if (role !== "register") {
+      const existingUser = await User.findOne({ phone });
+      if (!existingUser) {
+        return res.status(404).json({ success: false, message: "Phone number not registered!" });
+      }
+    }
+
+    // --- Store OTP in MongoDB ---
+    await OTP.deleteMany({ phone }); // Clear any previous OTPs for this number
+    await OTP.findOneAndUpdate(
+      { phone },
+      { otp, expiresAt: new Date(now + 5 * 60 * 1000) }, // 5 minute expiry
+      { upsert: true, new: true }
+    );
+
+    // --- Send OTP via WANotifier (WhatsApp) ---
+    const payload = {
+      data: { body_variables: [`${otp}`] },
+      recipients: [
+        {
+          whatsapp_number: phone.startsWith("+") ? phone : `+91${phone}`,
+          first_name: firstName,
+          last_name: lastName,
+          attributes: {
+            custom_attribute_1: message,
+            custom_attribute_2: "OTP verification",
+            custom_attribute_3: new Date().toLocaleString(),
+          },
+          lists: ["Default"],
+          tags: ["user_otp_request"],
+          replace: false,
+        },
+      ],
+    };
+
+    const wanotifierEndpoint = "https://app.wanotifier.com/api/v1/notifications/A6bKc2FDWM";
+    const apiKey = process.env.WANOTIFIER_API_KEY || "Kvnrzau1GMzI925TmjR3Jl8MWZbKWZ";
+
+    const response = await fetch(`${wanotifierEndpoint}?key=${apiKey}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      console.log(`✅ OTP sent to ${phone}: ${otp}`);
+      return res.status(200).json({ message: "OTP sent successfully" });
+    } else {
+      console.error("WANotifier Error:", data);
+      return res.status(500).json({ message: "Failed to send OTP", detail: data });
+    }
+  } catch (error) {
+    console.error("OTP Error:", error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+});
 router.post("/send-otp-admin", async (req, res) => {
   if (!verifyRequestSource(req)) {
     return res.status(403).json({ message: "Unauthorized request source" });

@@ -15,7 +15,7 @@ import UploadLink from "../models/UploadLinkSchema.js";
 import crypto from "crypto";
 import UserWorkerRemark from "../models/UserWorkerSchema.js";
 import uploadToS3 from "../utils/s3.js";
-
+import OTP from "../models/otpSchema.js";
 const categoriesPath = path.resolve("./controllers/categories.json"); // relative to server.js
 
 const categories = JSON.parse(fs.readFileSync(categoriesPath, "utf-8"));
@@ -282,13 +282,14 @@ export const generateUploadLink = catchAsyncErrors(async (req, res) => {
 });
 
 export const login = catchAsyncErrors(async (req, res, next) => {
-  const { phone, email, password } = req.body;
+  const { phone, email, password, otp, loginMethod } = req.body;
 
-  if ((!phone && !email) || !password) {
-    return next(new ErrorHandler("Please provide phone/email and password.", 400));
+  const identifier = phone || email;
+  if (!identifier) {
+    return next(new ErrorHandler("Please provide phone or email.", 400));
   }
 
-  // Find users by phone or email
+  // 1. Find the user(s)
   const query = phone ? { phone } : { email };
   const users = await User.find(query).select("+password");
 
@@ -296,39 +297,48 @@ export const login = catchAsyncErrors(async (req, res, next) => {
     return next(new ErrorHandler("User not found. Please register.", 404));
   }
 
-  // Try matching password for each user
   let matchedUser = null;
-  for (const u of users) {
-    const isPasswordMatched = await bcrypt.compare(password, u.password);
-    if (isPasswordMatched) {
-      matchedUser = u;
-      break;
+
+  // 2. Verification Logic
+  if (loginMethod === 'otp') {
+    if (!otp) return next(new ErrorHandler("Please enter the OTP.", 400));
+    
+    // Fetch OTP from DB
+    const stored = await OTP.findOne({ phone }).sort({ createdAt: -1 });
+    if (!stored || Date.now() > stored.expiresAt.getTime()) {
+      return next(new ErrorHandler("OTP expired or not found.", 400));
     }
+    if (String(stored.otp).trim() !== String(otp).trim()) {
+      return next(new ErrorHandler("Invalid OTP.", 400));
+    }
+    
+    // Success - Match the first user found (or handle role selection if multiple)
+    matchedUser = users[0];
+    await OTP.deleteOne({ _id: stored._id });
+  } else {
+    // Password Logic
+    if (!password) return next(new ErrorHandler("Please enter your password.", 400));
+    for (const u of users) {
+      const isPasswordMatched = await bcrypt.compare(password, u.password);
+      if (isPasswordMatched) {
+        matchedUser = u;
+        break;
+      }
+    }
+    if (!matchedUser) return next(new ErrorHandler("Incorrect password.", 401));
   }
 
-  if (!matchedUser) {
-    return next(new ErrorHandler("Incorrect password.", 401));
-  }
-
+  // 3. Status Check
   if (matchedUser.status === "Block") {
-    return next(
-      new ErrorHandler(
-        "Your account has been locked. Please contact our support team at support@bookmyworkers.com for assistance.",
-        403
-      )
-    );
+    return next(new ErrorHandler("Your account has been locked.", 403));
   }
 
-  // Extract available roles for that phone/email
   const availableRoles = users.map((u) => u.role);
-
-  // ✅ Count how many users have this user's phone number in their 'referredBy' field
   const referralCount = await User.countDocuments({ referredBy: matchedUser.phone });
 
-  // Send login success with available roles + referral count
   sendToken(matchedUser, 200, res, "Logged in successfully!", {
     availableRoles,
-    referralCount, // 👈 added field
+    referralCount,
   });
 });
 
