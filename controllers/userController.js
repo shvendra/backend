@@ -1015,6 +1015,52 @@ export const leadRegister = async (req, res) => {
 
   return res.status(200).json({ success: true });
 };
+export const leadWebRegister = async (req, res) => {
+  const { role, intent, name, phone } = req.body;
+  const finalRole = role || intent;
+  
+  console.log("Incoming Lead Data:", req.body);
+
+  try {
+    // 1. Validation
+    if (!phone || !finalRole || !name) {
+      return res.status(400).json({ 
+        success: false, 
+        message: "Name, Phone, and Intent are all required" 
+      });
+    }
+
+    // 2. Create the new entry
+    // NOTE: This will fail if 'phone' is unique in your Schema and already exists
+    await Lead.create({
+      role: finalRole,
+      name: name,
+      phone: phone,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    });
+
+    return res.status(200).json({ 
+      success: true, 
+      message: "New lead created successfully" 
+    });
+
+  } catch (error) {
+    // Handle Duplicate Key Error (Code 11000) if phone is unique
+    if (error.code === 11000) {
+      return res.status(400).json({
+        success: false,
+        message: "This phone number is already registered."
+      });
+    }
+
+    console.error("Error creating lead:", error);
+    return res.status(500).json({ 
+      success: false, 
+      message: "Internal server error" 
+    });
+  }
+};
 
 export const getAllLeads = async (req, res) => {
   try {

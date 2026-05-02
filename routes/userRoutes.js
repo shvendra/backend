@@ -1,11 +1,12 @@
 import express from "express";
-import { updateEmployerAgentPaymentVerifiedBadgeStatus,  saveWorkerRemark, getWorkerRemarks, generateUploadLink, uploadKycDocuments, unlockAgentNumber, getUsersByReferredBy, getUserByRole, getAllAgentsAdmin, getAgentById, leadRegister, login, register, logout, getUser, updateUser, getAgents, updatePassword, getAllLeads } from "../controllers/userController.js";
+import { leadWebRegister, updateEmployerAgentPaymentVerifiedBadgeStatus,  saveWorkerRemark, getWorkerRemarks, generateUploadLink, uploadKycDocuments, unlockAgentNumber, getUsersByReferredBy, getUserByRole, getAllAgentsAdmin, getAgentById, leadRegister, login, register, logout, getUser, updateUser, getAgents, updatePassword, getAllLeads } from "../controllers/userController.js";
 import { isAuthenticated, verifyUploadLink } from "../middlewares/auth.js";
 import { authorizeAdminOrSuperAdmin } from "../utils/authorizeAdminOrSuperAdmin.js";
 import { setRole } from "../controllers/userController.js";
 
 const router = express.Router();
 router.post("/lead-register", leadRegister);
+router.post("/lead-web-register", leadWebRegister);
 router.post("/register", register);
 router.post("/login", login);
 router.get("/logout", isAuthenticated, logout);
