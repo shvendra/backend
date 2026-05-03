@@ -52,7 +52,6 @@ export const notifyAgents = async ({ state, district, workType }) => {
       try {
         const payload = { recipients: [recipient] };
         const response = await axios.post(wanotifierUrl, payload);
-        console.log(`✅ Sent to ${recipient.whatsapp_number}`, response.data);
       } catch (err) {
         console.error(
           `❌ Failed for ${recipient.whatsapp_number}:`,

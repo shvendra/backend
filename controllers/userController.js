@@ -454,7 +454,6 @@ export const updateEmployerPaymentVerifiedBadgeStatus = async (_id) => {
       { veryfiedBage: true },
       { new: true }
     );
-console.log(updatedUser);
     if (!updatedUser) {
       console.warn("No user found with ID:", _id);
       return null;
@@ -467,12 +466,9 @@ console.log(updatedUser);
   }
 };
 export const updateEmployerAgentPaymentVerifiedBadgeStatus = async (req, res) => {
-  console.log("API HIT");
 
   try {
     const { _id, type, planKey, startDate, transactionId } = req.body;
-
-    console.log("BODY:", req.body); // ✅ debug
 
     // ❌ Validation
     if (!_id) {
@@ -797,7 +793,7 @@ export const getAgents = async (req, res) => {
     const pageNumber = Number(page) || 1;
     const limitNumber = Number(limit) || 25;
 
-    let filter = {
+    const filter = {
       role: { $in: ["Agent", "SelfWorker", "Worker"] },
       status: { $in: ["Verified", "Unverified"] },
     };
@@ -819,7 +815,6 @@ export const getAgents = async (req, res) => {
     }
 
     if (city) {
-// const capitalizedCity = city.charAt(0).toUpperCase() + city.slice(1).toLowerCase();
       filter.$or = [
         { district: city },
         { serviceArea: { $in: [city] } },
@@ -834,23 +829,22 @@ export const getAgents = async (req, res) => {
       filter.gender = gender;
     }
 
-    // Age filter
     if (minAge || maxAge) {
       const currentYear = new Date().getFullYear();
       const minDOB = maxAge ? currentYear - Number(maxAge) : null;
       const maxDOB = minAge ? currentYear - Number(minAge) : null;
 
       filter.dob = {};
+
       if (minDOB !== null) filter.dob.$lte = minDOB;
       if (maxDOB !== null) filter.dob.$gte = maxDOB;
 
-      if (!Object.keys(filter.dob).length) {
-        delete filter.dob;
-      }
+      if (!Object.keys(filter.dob).length) delete filter.dob;
     }
 
     // workerType expansion
     let allTypes = [];
+
     if (workerType) {
       const normalizedWorkerType = String(workerType).trim().toLowerCase();
 
@@ -872,50 +866,45 @@ export const getAgents = async (req, res) => {
       allTypes = allTypes.map((v) => String(v).trim().toLowerCase());
     }
 
-    // First fetch all docs matching base filters
+    // Fetch lean objects only (much faster)
     let agents = await User.find(filter)
       .select(
-        "_id name district block profilePhoto status state serviceArea areasOfWork dob veryfiedBage role gender fixedSalary salaryFrom salaryTo workExperience"
+        "_id name district block profilePhoto status state serviceArea areasOfWork dob veryfiedBage role gender fixedSalary salaryFrom salaryTo workExperience createdAt"
       )
-      .sort({ createdAt: -1 });
+      .sort({ createdAt: -1 })
+      .lean();
 
-    // Then apply workerType filter in Node
+    // workerType filter in Node (optimized)
     if (allTypes.length) {
       agents = agents.filter((agent) => {
-        // role check optional, mostly unnecessary unless role names are used as worker types
-        const normalizedRole = String(agent.role || "").trim().toLowerCase();
-        if (allTypes.includes(normalizedRole)) return true;
+        // 1. Role Match (Highest priority)
+        if (allTypes.includes(agent.role)) return true;
 
-        if (!agent.areasOfWork || !Array.isArray(agent.areasOfWork)) {
-          return false;
-        }
+        // 2. Combine both fields into one search array
+        // We use [].concat to handle cases where one might be undefined/null
+        const rawData = [].concat(agent.areasOfWork || [], agent.categories || []);
 
-        let normalizedAreas = [];
-
-        for (const aw of agent.areasOfWork) {
+        // 3. Normalize: Flatten and Parse
+        const normalizedData = rawData.flatMap(item => {
+          if (typeof item !== 'string') return item; // If it's already an object/number
+          
           try {
-            const parsed = JSON.parse(aw);
-
-            if (Array.isArray(parsed)) {
-              normalizedAreas.push(
-                ...parsed.map((v) => String(v).trim().toLowerCase())
-              );
-            } else {
-              normalizedAreas.push(String(parsed).trim().toLowerCase());
-            }
+            const parsed = JSON.parse(item);
+            return Array.isArray(parsed) ? parsed : [parsed];
           } catch (e) {
-            normalizedAreas.push(String(aw).trim().toLowerCase());
+            return item; // It's just a regular string
           }
-        }
+        });
 
-        return normalizedAreas.some((v) => allTypes.includes(v));
+        // 4. Check if any item in our normalized list matches allTypes
+        return normalizedData.some(val => 
+          typeof val === 'string' && allTypes.includes(val)
+        );
       });
     }
 
-    // Total after actual filtering
     const totalCount = agents.length;
-console.log(agents);
-    // Pagination after actual filtering
+
     const skip = (pageNumber - 1) * limitNumber;
     const paginatedAgents = agents.slice(skip, skip + limitNumber);
 
@@ -931,6 +920,7 @@ console.log(agents);
     });
   } catch (error) {
     console.error("❌ Error fetching agents:", error);
+
     return res.status(500).json({
       success: false,
       message: "Failed to fetch agents",
@@ -1018,9 +1008,6 @@ export const leadRegister = async (req, res) => {
 export const leadWebRegister = async (req, res) => {
   const { role, intent, name, phone } = req.body;
   const finalRole = role || intent;
-  
-  console.log("Incoming Lead Data:", req.body);
-
   try {
     // 1. Validation
     if (!phone || !finalRole || !name) {
@@ -1176,7 +1163,6 @@ export const getAgentById = async (req, res) => {
 
 export const unlockAgentNumber = async (req, res) => {
   try {
-    console.log("Unlock number request by employer:", req.user._id);
     const employerId = req.user._id;
     const { agentId } = req.params;
 

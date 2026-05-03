@@ -51,7 +51,6 @@ export default async function sendInvoiceEmail(user, txn) {
     
     try {
       s3Url = await uploadToS3(fileBuffer, s3Key, "application/pdf");
-      console.log("✅ Invoice uploaded to S3:", s3Url);
     } catch (s3Err) {
       console.error("❌ S3 Upload Failed:", s3Err);
       // We don't throw here so the email still attempts to send
@@ -88,7 +87,6 @@ export default async function sendInvoiceEmail(user, txn) {
 
     // 5. Send Email
     await transporter.sendMail(mailOptions);
-    console.log(`📧 Email sent to ${user.email}`);
 
   } catch (error) {
     console.error("Critical error in sendInvoiceEmail:", error);

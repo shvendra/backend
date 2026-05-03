@@ -38,9 +38,7 @@ export const createBlog = async (req, res) => {
     // 🔥 IMPORTANT FIX HERE
     const photoUrl = result.Location; // ✅ MUST BE STRING
 
-    // Debug (optional)
-    console.log("S3 Upload Result:", result);
-    console.log("Photo URL:", photoUrl);
+
 
     // ✅ Save to DB
     const blog = await Blog.create({
@@ -172,7 +170,6 @@ export const getAllPublishedBlogs = async (req, res) => {
 
 export const getSingleBlog = async (req, res) => {
   try {
-    console.log(req.params);
 const blog = await Blog.findOneByLink(req.params.link);
     if (!blog) return res.status(404).json({ message: "Blog not found" });
     res.status(200).json({ blog });

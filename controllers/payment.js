@@ -41,7 +41,6 @@ export const createPhonePePayment = async (data, merchantOrderId, paymentType) =
   if (!firstName || !employer_phone || !amount) {
     throw new Error("Missing required parameters.");
   }
-console.log(data);
   const fullName = `${firstName} ${lastName}`.trim();
 
   // Build meta info
@@ -131,10 +130,8 @@ export const status = async (req, res) => {
       return res.status(400).json({ error: "Missing merchantOrderId parameter." });
     }
 
-    console.log("Params:", req.params);
 
     const ENV = process.env.PAYMENT_ENV || "dev";
-console.log("Payment ENV:", ENV);
 const STATUS_BASE_URL =
   ENV === "prod"
     ? "https://api.phonepe.com/apis/pg/checkout/v2"
@@ -147,7 +144,6 @@ const STATUS_BASE_URL =
       return res.status(500).json({ error: "OAuth token not available." });
     }
 
-    console.log("Checking status from PhonePe:", URL);
 
     const response = await axios.get(URL, {
       headers: {
@@ -167,20 +163,17 @@ const meta = JSON.parse(response.data?.metaInfo?.udf5 || "{}");
      // Always update transaction first (common logic)
   const txn = await updateTransactionStatusById(merchantOrderId, "Done");
 if (paymenttype === "subscription") {
-  console.log("Processing subscription payment for txn:", txn);
   const userDetail = await updateEmployerPaymentStatus(txn?.employerId, meta?.employerType || "", meta?.planId || "");
 
   if (userDetail) {
     try {
       await sendInvoiceEmail(userDetail, txn);
-      console.log("Invoice email sent successfully");
     } catch (err) {
       console.error("Email sending failed:", err);
     }
   }
 
 } else if (paymenttype === "verifiedbadge") {
-  console.log("Processing verified badge payment for txn:", txn);
   // ✅ Only update verified badge status (no invoice)
   await updateEmployerPaymentVerifiedBadgeStatus(txn?.employerId);
 

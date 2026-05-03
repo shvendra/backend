@@ -121,10 +121,7 @@ app.use(
     contentSecurityPolicy: {
       directives: {
         defaultSrc: ["'self'"],
-        connectSrc: [
-          "'self'",
-          ...allowedOrigins, // ✅ allow frontend domains to make API calls
-        ],
+        connectSrc: ["'self'", ...allowedOrigins, "wss://bookmyworkers.com", "ws://localhost:*"],
         styleSrc: ["'self'", "'unsafe-inline'"],
         scriptSrc: ["'self'", "'unsafe-inline'"],
         imgSrc: ["'self'", "data:", "https:"],

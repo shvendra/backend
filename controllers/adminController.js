@@ -33,10 +33,6 @@ export const getCaptcha = (req, res) => {
   req.session.captcha = captchaText;
 
   req.session.save((err) => {
-    console.log("GENERATE sessionID:", req.sessionID);
-    console.log("GENERATE captcha:", captchaText);
-    console.log("GENERATE cookie header:", req.headers.cookie);
-
     if (err) {
       console.error("Save captcha session error:", err);
       return res.status(500).json({ message: "Failed to save captcha session" });
@@ -50,9 +46,6 @@ export const getCaptcha = (req, res) => {
 };
 
 export const verifyCaptcha = (req, res) => {
-  console.log("VERIFY sessionID:", req.sessionID);
-  console.log("VERIFY stored captcha:", req.session?.captcha);
-  console.log("VERIFY entered captcha:", req.body?.captcha);
 
   const { captcha } = req.body;
 
