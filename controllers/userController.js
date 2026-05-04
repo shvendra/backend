@@ -829,24 +829,26 @@ export const getAgents = async (req, res) => {
     }
 
     // city filter
-    if (city) {
-      filter.$or = [
-        {
-          district: {
-            $regex: `^${String(city).trim()}$`,
-            $options: "i",
-          },
-        },
-        {
-          serviceArea: {
-            $elemMatch: {
-              $regex: `^${String(city).trim()}$`,
-              $options: "i",
-            },
-          },
-        },
-      ];
-    }
+if (city) {
+  const normalizedCity = String(city)
+    .trim()
+    .replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+  const cityRegex = {
+    $regex: `^\\s*${normalizedCity}\\s*$`,
+    $options: "i",
+  };
+
+  filter.$or = [
+    { district: cityRegex }, // district match
+    { block: cityRegex }, // block / tehsil match
+    {
+      serviceArea: {
+        $elemMatch: cityRegex, // service area array match
+      },
+    },
+  ];
+}
 
     // block filter
     if (block) {

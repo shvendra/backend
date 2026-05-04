@@ -55,7 +55,8 @@ const app = express();
 config(); // Use default .env file
 const allowedOrigins = [
   "https://bookmyworkers.com", 
-  "https://www.bookmyworkers.com"
+  "https://www.bookmyworkers.com",
+  "http://localhost:3000",
 ];
 
 // Add localhost for development
