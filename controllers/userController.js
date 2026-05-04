@@ -844,7 +844,9 @@ export const getAgents = async (req, res) => {
 
     // worker group filter
     if (workerGroup) {
-      const normalizedWorkerGroup = String(workerGroup).trim().toLowerCase();
+      const normalizedWorkerGroup = String(workerGroup)
+        .trim()
+        .toLowerCase();
 
       if (normalizedWorkerGroup === "group") {
         filter.role = { $in: ["Agent"] };
@@ -853,7 +855,7 @@ export const getAgents = async (req, res) => {
       }
     }
 
-    // status filter (case insensitive)
+    // status filter
     if (status) {
       const statuses = Array.isArray(status) ? status : [status];
 
@@ -872,33 +874,10 @@ export const getAgents = async (req, res) => {
       };
     }
 
-    // city filter
-if (city) {
-  const searchCity = String(city).trim().toLowerCase();
-
-  agents = agents.filter((agent) => {
-    const locations = [
-      agent.district,
-      agent.block,
-      ...(agent.serviceArea || []),
-    ]
-      .filter(Boolean)
-      .map((loc) => String(loc).toLowerCase().trim());
-
-    return locations.some((loc) => {
-      return (
-        loc.includes(searchCity) || // partial match
-        similarity(loc, searchCity) >= 0.75 || // typo tolerance
-        similarity(searchCity, loc) >= 0.75
-      );
-    });
-  });
-}
-
     // block filter
     if (block) {
       filter.block = {
-        $regex: `^${String(block).trim()}$`,
+        $regex: String(block).trim(),
         $options: "i",
       };
     }
@@ -965,10 +944,62 @@ if (city) {
       .sort({ createdAt: -1 })
       .lean();
 
-    // workerType filter in node
+  if (city) {
+  const searchCity = String(city).trim().toLowerCase();
+
+  agents = agents
+    .map((agent) => {
+      const locations = [
+        agent.district,
+        agent.block,
+        ...(agent.serviceArea || []),
+      ]
+        .filter(Boolean)
+        .map((loc) => String(loc).toLowerCase().trim());
+
+      let bestScore = 0;
+
+      locations.forEach((loc) => {
+        // 1. exact match → highest priority
+        if (loc === searchCity) {
+          bestScore = Math.max(bestScore, 100);
+          return;
+        }
+
+        // 2. partial match
+        if (
+          loc.includes(searchCity) ||
+          searchCity.includes(loc)
+        ) {
+          bestScore = Math.max(bestScore, 80);
+          return;
+        }
+
+        // 3. fuzzy match
+        const score = Math.max(
+          similarity(loc, searchCity),
+          similarity(searchCity, loc)
+        );
+
+        const threshold = searchCity.length <= 5 ? 0.5 : 0.75;
+
+        if (score >= threshold) {
+          bestScore = Math.max(bestScore, score * 100);
+        }
+      });
+
+      return {
+        ...agent,
+        matchScore: bestScore,
+      };
+    })
+    .filter((agent) => agent.matchScore > 0)
+    .sort((a, b) => b.matchScore - a.matchScore);
+}
+
+    // workerType filter
     if (allTypes.length) {
       agents = agents.filter((agent) => {
-        // role match
         if (
           allTypes.includes(
             String(agent.role || "").trim().toLowerCase()
@@ -1004,8 +1035,8 @@ if (city) {
     }
 
     const totalCount = agents.length;
-
     const skip = (pageNumber - 1) * limitNumber;
+
     const paginatedAgents = agents.slice(
       skip,
       skip + limitNumber
@@ -1031,8 +1062,6 @@ if (city) {
     });
   }
 };
-
-
 export const getAllAgentsAdmin = async (req, res) => {
   try {
     const { state, city, phone, ids } = req.query;
