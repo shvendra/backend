@@ -798,37 +798,73 @@ export const getAgents = async (req, res) => {
       status: { $in: ["Verified", "Unverified"] },
     };
 
-    if (workerGroup === "group") {
-      filter.role = { $in: ["Agent"] };
-    } else if (workerGroup === "individual") {
-      filter.role = { $in: ["SelfWorker", "Worker"] };
+    // worker group filter
+    if (workerGroup) {
+      const normalizedWorkerGroup = String(workerGroup).trim().toLowerCase();
+
+      if (normalizedWorkerGroup === "group") {
+        filter.role = { $in: ["Agent"] };
+      } else if (normalizedWorkerGroup === "individual") {
+        filter.role = { $in: ["SelfWorker", "Worker"] };
+      }
     }
 
+    // status filter (case insensitive)
     if (status) {
+      const statuses = Array.isArray(status) ? status : [status];
+
       filter.status = {
-        $in: Array.isArray(status) ? status : [status],
+        $in: statuses.map(
+          (s) => new RegExp(`^${String(s).trim()}$`, "i")
+        ),
       };
     }
 
+    // state filter
     if (state && state !== "All") {
-      filter.state = state;
+      filter.state = {
+        $regex: `^${String(state).trim()}$`,
+        $options: "i",
+      };
     }
 
+    // city filter
     if (city) {
       filter.$or = [
-        { district: city },
-        { serviceArea: { $in: [city] } },
+        {
+          district: {
+            $regex: `^${String(city).trim()}$`,
+            $options: "i",
+          },
+        },
+        {
+          serviceArea: {
+            $elemMatch: {
+              $regex: `^${String(city).trim()}$`,
+              $options: "i",
+            },
+          },
+        },
       ];
     }
 
+    // block filter
     if (block) {
-      filter.block = block;
+      filter.block = {
+        $regex: `^${String(block).trim()}$`,
+        $options: "i",
+      };
     }
 
+    // gender filter
     if (gender) {
-      filter.gender = gender;
+      filter.gender = {
+        $regex: `^${String(gender).trim()}$`,
+        $options: "i",
+      };
     }
 
+    // age filter
     if (minAge || maxAge) {
       const currentYear = new Date().getFullYear();
       const minDOB = maxAge ? currentYear - Number(maxAge) : null;
@@ -846,59 +882,76 @@ export const getAgents = async (req, res) => {
     let allTypes = [];
 
     if (workerType) {
-      const normalizedWorkerType = String(workerType).trim().toLowerCase();
+      const normalizedWorkerType = String(workerType)
+        .trim()
+        .toLowerCase();
 
       const mainCategory = categories.find(
         (cat) =>
-          String(cat.value).trim().toLowerCase() === normalizedWorkerType ||
-          String(cat.label).trim().toLowerCase() === normalizedWorkerType
+          String(cat.value).trim().toLowerCase() ===
+            normalizedWorkerType ||
+          String(cat.label).trim().toLowerCase() ===
+            normalizedWorkerType
       );
 
       if (mainCategory) {
         allTypes = [
           mainCategory.value,
-          ...(mainCategory.subcategories || []).map((sub) => sub.value),
+          ...(mainCategory.subcategories || []).map(
+            (sub) => sub.value
+          ),
         ];
       } else {
         allTypes = [workerType];
       }
 
-      allTypes = allTypes.map((v) => String(v).trim().toLowerCase());
+      allTypes = allTypes.map((v) =>
+        String(v).trim().toLowerCase()
+      );
     }
 
-    // Fetch lean objects only (much faster)
+    // fetch users
     let agents = await User.find(filter)
       .select(
-        "_id name district block profilePhoto status state serviceArea areasOfWork dob veryfiedBage role gender fixedSalary salaryFrom salaryTo workExperience createdAt"
+        "_id name district block profilePhoto status state serviceArea areasOfWork categories dob veryfiedBage role gender fixedSalary salaryFrom salaryTo workExperience createdAt"
       )
       .sort({ createdAt: -1 })
       .lean();
 
-    // workerType filter in Node (optimized)
+    // workerType filter in node
     if (allTypes.length) {
       agents = agents.filter((agent) => {
-        // 1. Role Match (Highest priority)
-        if (allTypes.includes(agent.role)) return true;
+        // role match
+        if (
+          allTypes.includes(
+            String(agent.role || "").trim().toLowerCase()
+          )
+        ) {
+          return true;
+        }
 
-        // 2. Combine both fields into one search array
-        // We use [].concat to handle cases where one might be undefined/null
-        const rawData = [].concat(agent.areasOfWork || [], agent.categories || []);
+        const rawData = [].concat(
+          agent.areasOfWork || [],
+          agent.categories || []
+        );
 
-        // 3. Normalize: Flatten and Parse
-        const normalizedData = rawData.flatMap(item => {
-          if (typeof item !== 'string') return item; // If it's already an object/number
-          
+        const normalizedData = rawData.flatMap((item) => {
+          if (typeof item !== "string") return item;
+
           try {
             const parsed = JSON.parse(item);
             return Array.isArray(parsed) ? parsed : [parsed];
-          } catch (e) {
-            return item; // It's just a regular string
+          } catch {
+            return item;
           }
         });
 
-        // 4. Check if any item in our normalized list matches allTypes
-        return normalizedData.some(val => 
-          typeof val === 'string' && allTypes.includes(val)
+        return normalizedData.some(
+          (val) =>
+            typeof val === "string" &&
+            allTypes.includes(
+              String(val).trim().toLowerCase()
+            )
         );
       });
     }
@@ -906,7 +959,10 @@ export const getAgents = async (req, res) => {
     const totalCount = agents.length;
 
     const skip = (pageNumber - 1) * limitNumber;
-    const paginatedAgents = agents.slice(skip, skip + limitNumber);
+    const paginatedAgents = agents.slice(
+      skip,
+      skip + limitNumber
+    );
 
     return res.status(200).json({
       success: true,
@@ -915,7 +971,8 @@ export const getAgents = async (req, res) => {
         page: pageNumber,
         limit: limitNumber,
         total: totalCount,
-        hasMore: skip + paginatedAgents.length < totalCount,
+        hasMore:
+          skip + paginatedAgents.length < totalCount,
       },
     });
   } catch (error) {
