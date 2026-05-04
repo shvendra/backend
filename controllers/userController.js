@@ -773,6 +773,50 @@ if (req.files?.profilePhoto) {
     res.status(500).json({ success: false, message: error.message });
   }
 };
+const similarity = (a = "", b = "") => {
+  a = a.toLowerCase().trim();
+  b = b.toLowerCase().trim();
+
+  const longer = a.length > b.length ? a : b;
+  const shorter = a.length > b.length ? b : a;
+
+  if (!longer.length) return 1;
+
+  const editDistance = (s1, s2) => {
+    const costs = [];
+
+    for (let i = 0; i <= s1.length; i++) {
+      let lastValue = i;
+
+      for (let j = 0; j <= s2.length; j++) {
+        if (i === 0) {
+          costs[j] = j;
+        } else if (j > 0) {
+          let newValue = costs[j - 1];
+
+          if (s1.charAt(i - 1) !== s2.charAt(j - 1)) {
+            newValue = Math.min(
+              Math.min(newValue, lastValue),
+              costs[j]
+            ) + 1;
+          }
+
+          costs[j - 1] = lastValue;
+          lastValue = newValue;
+        }
+      }
+
+      if (i > 0) costs[s2.length] = lastValue;
+    }
+
+    return costs[s2.length];
+  };
+
+  return (
+    (longer.length - editDistance(longer, shorter)) /
+    longer.length
+  );
+};
 
 export const getAgents = async (req, res) => {
   try {
@@ -830,24 +874,25 @@ export const getAgents = async (req, res) => {
 
     // city filter
 if (city) {
-  const normalizedCity = String(city)
-    .trim()
-    .replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const searchCity = String(city).trim().toLowerCase();
 
-  const cityRegex = {
-    $regex: `^\\s*${normalizedCity}\\s*$`,
-    $options: "i",
-  };
+  agents = agents.filter((agent) => {
+    const locations = [
+      agent.district,
+      agent.block,
+      ...(agent.serviceArea || []),
+    ]
+      .filter(Boolean)
+      .map((loc) => String(loc).toLowerCase().trim());
 
-  filter.$or = [
-    { district: cityRegex }, // district match
-    { block: cityRegex }, // block / tehsil match
-    {
-      serviceArea: {
-        $elemMatch: cityRegex, // service area array match
-      },
-    },
-  ];
+    return locations.some((loc) => {
+      return (
+        loc.includes(searchCity) || // partial match
+        similarity(loc, searchCity) >= 0.75 || // typo tolerance
+        similarity(searchCity, loc) >= 0.75
+      );
+    });
+  });
 }
 
     // block filter
